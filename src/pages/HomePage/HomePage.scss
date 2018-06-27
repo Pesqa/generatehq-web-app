@@ -1,0 +1,202 @@
+@import '../../styles/App.scss';
+
+* {
+  font-family: "chaparral-pro",georgia,serif !important;
+  text-rendering: geometricPrecision !important;
+}
+
+.full-height{
+  height:100vh;
+}
+
+.global-font{
+  font-family: Brandon,Helvetica Neue,Helvetica,sans-serif;
+}
+
+
+.main-container{
+  background-color: $white;
+
+  input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+  }
+}
+
+.btn-black{
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+
+.content {
+    margin-top: 150px;
+    background-color: #a9a8a8;
+    min-height: 5500px;
+}
+.container {
+    background-color: #f2f2f2;
+}
+.sidebar-outer {
+    margin-top: 150px;
+    position: relative;
+}
+.fixed {
+    position: fixed;
+}
+
+.footer{
+  position:fixed;bottom:0;left:0;    
+                background:lightgray;width:100%;
+}
+
+.flex{
+  display: flex;
+}
+
+.relative {
+    position: relative;
+}
+.justify-center {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.absolute--fill {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+.w-100{
+  width: 100%;
+}
+
+.w-40{
+  width: 40%;
+}
+
+.w-60{
+  width: 60%;
+}
+
+.overflow-y{
+  overflow-y: auto;
+}
+
+.chatbot-title{
+  font-size: 23px;
+  line-height: 1.4em;
+  font-weight: 400;
+  color: #222;
+}
+
+.chatbot-subtitle{
+  line-height: 1.4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+.agent-image{
+  min-height: 315px;
+  min-width: 0px;
+  flex: 1 1 auto;
+  background-size: cover!important;
+
+  .agent-name{
+    font-size: 3rem;
+    color: $white;
+    text-align:center;
+    width: 100%;
+
+  }
+}
+
+.chatbot-element{
+  position: relative;
+  top: 0px;
+}
+
+
+
+@media only screen and (max-width: 567px) {
+  .flex-row-sm{
+    flex-direction: row!important;
+  }
+
+  .flex-column-sm{
+    flex-direction: column!important;
+  }
+
+  .w-sm-100{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 567px) {
+  .flex-column-md{
+    flex-direction: column!important;
+  }
+
+  .flex-row-md{
+    flex-direction: row!important;
+  }
+
+  .overflow-y-auto-md{
+      overflow-y:auto
+  }
+
+  .flex-md{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex
+  }
+
+  .w-md-40{
+    width: 40%;
+  }
+
+  .w-md-60{
+    width: 60%;
+  }
+
+}
+
+.overflow-y-auto{
+    overflow-y:auto;
+}
+
+.flex-auto{
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.header-wrapper{
+  background: $black;
+  color: $white;
+  text-align: center;
+  justify-content: center;
+
+  > a {
+    color: $white;
+    border: 1px solid $white;
+    padding: 3px 8px;
+    font-weight: bold;
+    margin: 3px;
+    text-decoration: none;
+  }
+}
