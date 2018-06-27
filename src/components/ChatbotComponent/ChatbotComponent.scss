@@ -98,17 +98,21 @@
 
 
 
-.question-component-fade-enter .chatbot-message{
-    opacity: 0;
-    transform: translateX(-200px);
+.question-component-fade-enter{
+  > .chatbot-message{
+      opacity: 0;
+      transform: translateX(-200px);
 
+  }
 }
 
-.question-component-fade-enter-active .chatbot-message{
-    opacity: 1;
-    transform: translateX(0em);
-    transition: opacity 2s ease-in-out, transform 1s ease-in;
-    transition-timing-function: ease-in-out;
+.question-component-fade-enter-active {
+   > .chatbot-message{
+      opacity: 1;
+      transform: translateX(0em);
+      transition: opacity 2s ease-in-out, transform 1s ease-in;
+      transition-timing-function: ease-in-out;
+  }
 }
 
 .question-component-fade-leave {
@@ -140,36 +144,13 @@
 }
 
 .answer-component-fade-enter .chatbot-message{
-    opacity: 0;
-    transform: translateX(-200px);
-}
-
-.answer-component-fade-enter-active .chatbot-message{
-    opacity: 1;
-    transform: translateX(0em);
-    transition: opacity 2s ease-in-out, transform 1s ease-in;
-    transition-timing-function: ease-in-out;
-}
-
-.answer-component-fade-leave {
-    transform: translateY(0em);
     opacity: 1;
 }
+.answer-component-fade-enter-done{
+  text-align: right;
 
-.answer-component-fade-leave.answer-component-fade-leave-active {
-    transform: translateY(+2em);
-    opacity: 0;
-    transition: opacity 200ms ease-in, transform 200ms ease-in;
-}
+  >.chatbot-message{
 
-.answer-component-fade-appear {
-    opacity: 0;
-    transform: translateY(+2em);
-}
-
-.answer-component-fade-appear.answer-component-fade-appear-active {
-    opacity: 1;
-    transform: translateY(0em);
-    transition: opacity 200ms ease-out, transform 200ms ease-in;
+  }
 }
 

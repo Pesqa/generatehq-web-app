@@ -1,4 +1,5 @@
 import axios from 'axios';
+import parseDomain from "parse-domain";
 import * as action_types from './constants';
 
 export const selectAnswer = (chat_answer, value) => {
@@ -7,7 +8,7 @@ export const selectAnswer = (chat_answer, value) => {
     var response = chat_answer;
 
     if(response.content_type !== 'button'){
-      response = Object.assign({},chat_answer, {content: value}); 
+      response = Object.assign({},chat_answer, {content: value});
     }
 
 
@@ -22,7 +23,7 @@ export const selectAnswer = (chat_answer, value) => {
 
 export const getMessage = (chat_message) => {
   return (dispatch) => {
-    return axios.get('http://localhost:3000/api/v1/chat_messages/' + chat_message.id)
+    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/' + chat_message.id)
       .then((response) => {
         if (response.status === 200) {
 
@@ -55,7 +56,7 @@ export const initMessages = () => {
     dispatch({
       type: action_types.GET_MESSAGE_START
     });
-    return axios.get('http://localhost:3000/api/v1/chat_messages')
+    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages')
       .then((response) => {
         if (response.status === 200) {
           dispatch({
