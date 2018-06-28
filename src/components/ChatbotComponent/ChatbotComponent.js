@@ -69,7 +69,7 @@ class Chatbot extends Component {
                           {(() => {
                               switch (question.content_type) {
                                   case 'button':
-                                    return <a className="btn chatbot-buble chatbot-button" onClick={this.selectAnswer(question)}>{ question.content } </a>;
+                                    return <a className="btn chatbot-button" onClick={this.selectAnswer(question)}>{ question.content } </a>;
                                   case 'address':
                                       return <AddressSuggest addAnswer={this.addAnswer} question={question}/>;
                                   default :

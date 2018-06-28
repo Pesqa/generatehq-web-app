@@ -24,13 +24,13 @@ class HomePage extends Component {
       <div className="overflow-hidden absolute absolute--fill flex flex-column-md flex-column-sm">
         <div className="flex-column">
           <div className="d-flex flex-row-md flex-row-sm align-self-start w-100 header-wrapper">
-            <a className="flex" href="tel:+1-250-661-8915" rel="noopener noreferrer" target="_blank">{`${this.props.profile.phone_number}`}</a>
+            <a className="flex" href="#" rel="noopener noreferrer" target="_blank">{`${this.props.profile.phone_number}`}</a>
           </div>
        </div>
 
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
-          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'http://localhost:3000/assets/images/' + 'bio-img.png'}) no-repeat scroll center center`} }>
+          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${process.env.REACT_APP_API_HOST + '/assets/images/' + 'bio-img.png'}) no-repeat scroll center center`} }>
             <div className="d-block d-sm-none agent-name">
               <div className="">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
            </div>
@@ -42,7 +42,7 @@ class HomePage extends Component {
               <div className="pt-3 pb-3">
                 <div className="flex-row d-none d-md-block">
                   <div className="col-sm-12 text-center">
-                    <img src="http://localhost:3000/assets/images/bio-img.png" height="52"/>
+                    <img src={`${process.env.REACT_APP_API_HOST + '/assets/images/bio-img.png'}`} height="52"/>
                   </div>
                 </div>
 
@@ -54,7 +54,7 @@ class HomePage extends Component {
 
                 <div className="flex-row">
                   <div className="col-sm-12 text-center chatbot-subtitle">
-                    Your local real property expert
+                    {`${this.props.profile.headline}`}
                   </div>
                 </div>
               </div>
@@ -73,8 +73,8 @@ class HomePage extends Component {
                   </div>
 
                   <div className="row">
-                    <div className="col-md-7 col-sm-12">
-                      Hi! I’m Adrian Zumbrunnen. I’m a designer, writer, speaker and coffee enthusiast currently residing in beautiful Zurich, Switzerland. I help companies create memorable experiences through user centered design.
+                    <div className="col-md-12 col-sm-12">
+                      {`${this.props.profile.bio}`}
 
                       <hr/>
                     </div>
@@ -82,19 +82,19 @@ class HomePage extends Component {
                   </div>
 
                   <div className="row">
-                    <div className="col-md-7 col-sm-12">
+                    <div className="col-md-12 col-sm-12">
                       <h1>Get in touch</h1>
                     </div>
                   </div>
 
                   <div className="row">
-                    <div className="col-md-7 col-sm-12">
+                    <div className="col-md-12 col-sm-12">
                       Interested in working together, exchanging, or just talk about coffee? Great! Get in touch, I'm friendly.
                     </div>
                   </div>
 
                   <div className="row">
-                    <div className="col-md-7 col-sm-12">
+                    <div className="col-md-12 col-sm-12">
                       <EmailForm />
                     </div>
                   </div>
@@ -102,7 +102,7 @@ class HomePage extends Component {
 
 
                   <div className="row mt-3">
-                    <div className="col-md-7 col-sm-12">
+                    <div className="col-md-12 col-sm-12">
                       {`${this.props.profile.first_name} ${this.props.profile.last_name}   ${this.props.profile.address}`}
                     </div>
                   </div>
