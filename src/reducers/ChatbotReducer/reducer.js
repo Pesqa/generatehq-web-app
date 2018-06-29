@@ -33,7 +33,7 @@ function chatbotReducer(state = initialState, action) {
       });
     }
     case action_types.CHAT_FINISHED: {
-      axios.post(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/send_report', { messages: state.chatMessageList } )
+      axios.post('http://api.generatehq.com' + '/api/v1/chat_messages/send_report', { messages: state.chatMessageList } )
       return Object.assign({...state});
     }
     default: {

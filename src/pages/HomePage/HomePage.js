@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import FontAwesome from 'react-fontawesome';
+
 import Chatbot from '../../components/ChatbotComponent/ChatbotComponent';
  import EmailForm from '../../components/EmailForm/EmailForm';
 
@@ -24,13 +26,16 @@ class HomePage extends Component {
       <div className="overflow-hidden absolute absolute--fill flex flex-column-md flex-column-sm">
         <div className="flex-column">
           <div className="d-flex flex-row-md flex-row-sm align-self-start w-100 header-wrapper">
-            <a className="flex" href="#" rel="noopener noreferrer" target="_blank">{`${this.props.profile.phone_number}`}</a>
+            <span className="text d-none d-md-block">
+              {`${this.props.profile.header_text}`}
+            </span>
+            <a className="flex" href={`${'tel:' + this.props.profile.phone_number}`} rel="noopener noreferrer" target="_blank">{`${this.props.profile.phone_number}`}</a>
           </div>
        </div>
 
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
-          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${process.env.REACT_APP_API_HOST + '/assets/images/' + 'bio-img.png'}) no-repeat scroll center center`} }>
+          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'images/' + this.props.profile.user_path + '.jpg'}) no-repeat scroll center center`} }>
             <div className="d-block d-sm-none agent-name">
               <div className="">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
            </div>
@@ -42,7 +47,7 @@ class HomePage extends Component {
               <div className="pt-3 pb-3">
                 <div className="flex-row d-none d-md-block">
                   <div className="col-sm-12 text-center">
-                    <img src={`${process.env.REACT_APP_API_HOST + '/assets/images/bio-img.png'}`} height="52"/>
+                    <img src={`${'images/' + this.props.profile.user_path + '.jpg'}`} height="52"/>
                   </div>
                 </div>
 

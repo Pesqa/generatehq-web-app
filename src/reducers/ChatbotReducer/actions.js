@@ -23,7 +23,7 @@ export const selectAnswer = (chat_answer, value) => {
 
 export const getMessage = (chat_message) => {
   return (dispatch) => {
-    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/' + chat_message.id)
+    return axios.get('http://api.generatehq.com' + '/api/v1/chat_messages/' + chat_message.id)
       .then((response) => {
         if (response.status === 200) {
 
@@ -56,7 +56,7 @@ export const initMessages = () => {
     dispatch({
       type: action_types.GET_MESSAGE_START
     });
-    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages')
+    return axios.get('http://api.generatehq.com' + '/api/v1/chat_messages')
       .then((response) => {
         if (response.status === 200) {
           dispatch({

@@ -26,7 +26,7 @@ class SignupForm extends Component {
     var domainHash = parseDomain(window.location.href);
     var fullDomain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
 
-    axios.post(process.env.REACT_APP_API_HOST + '/api/v1/profiles/send_email', { domain: fullDomain, email: { from: this.state.email, message: this.state.message }  })
+    axios.post('http://api.generatehq.com' + '/api/v1/profiles/send_email', { domain: fullDomain, email: { from: this.state.email, message: this.state.message }  })
     .then((response) => {
       if (response.status === 200) {
         // dispatch({
