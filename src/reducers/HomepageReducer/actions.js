@@ -8,7 +8,7 @@ export const initProfile = () => {
   var userPath = window.location.pathname.split( '/' )[1];
 
   return (dispatch) => {
-    return axios.post(process.env.REACT_APP_API_HOST + '/api/v1/profiles/get_info', { domain: fullDomain, user_path: userPath  })
+    return axios.post('http://api.generatehq.com' + '/api/v1/profiles/get_info', { domain: fullDomain, user_path: userPath  })
       .then((response) => {
         if (response.status === 200) {
           dispatch({
