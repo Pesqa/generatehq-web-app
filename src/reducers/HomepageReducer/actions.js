@@ -1,5 +1,5 @@
 import axios from 'axios';
-import parseDomain from "parse-domain";
+import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
 
 export const initProfile = () => {
