@@ -44,24 +44,26 @@ class HomePage extends Component {
           <div className="d-flex flex-column  w-md-60 w-sm-100 overflow-y-auto-md _background-grey">
             <div className="">
 
-              <div className="pt-3 pb-3">
-                <div className="flex-row d-none d-md-block">
-                  <div className="col-sm-12 text-center">
-                    <img src={`${'images/' + this.props.profile.user_path + '.jpg'}`} height="52"/>
+              <div className="agent-header-wrapper mt-3 mb-3">
+                  <div className="flex-row subtitle">
+                    <div className="col-sm-12 text-left chatbot-subtitle">
+                      {`${this.props.profile.headline}`}
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex-row d-none d-md-block">
-                  <div className="col-sm-12 text-center chatbot-title">
-                    {`${this.props.profile.first_name} ${this.props.profile.last_name}` }
+                  <div className="flex-row d-none d-md-block name">
+                    <div className="col-sm-12 text-left">
+                      {`${this.props.profile.first_name} ${this.props.profile.last_name}` }
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex-row">
-                  <div className="col-sm-12 text-center chatbot-subtitle">
-                    {`${this.props.profile.headline}`}
+                  <div className="flex-row d-none d-md-block status">
+                    <div className="col-sm-12 text-left">
+                      Online
+                    </div>
                   </div>
-                </div>
+
+
               </div>
 
               <Chatbot />

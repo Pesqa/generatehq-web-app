@@ -93,22 +93,6 @@
   overflow-y: auto;
 }
 
-.chatbot-title{
-  font-size: 23px;
-  line-height: 1.4em;
-  font-weight: 400;
-  color: #222;
-}
-
-.chatbot-subtitle{
-  line-height: 1.4em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-
-
 .agent-image{
   min-height: 315px;
   min-width: 0px;
@@ -205,4 +189,37 @@
     margin: 3px;
     text-decoration: none;
   }
+}
+
+.agent-header-wrapper{
+  margin: 0 auto;
+  position: relative;
+
+  > .name{
+    font-size: 46px !important;
+    font-weight: 600;
+  }
+
+  > .status {
+    color: green;
+    text-transform: uppercase;
+    font-size: 16px !important;;
+    font-weight: bold;
+  }
+
+  > .subtitle{
+    color: grey;
+  }
+
+  @media only screen and (min-width: 320px) {
+    width: 75%;
+    padding-left: 30px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+
 }
