@@ -57,7 +57,7 @@ class Chatbot extends Component {
               </CSSTransition>
             ))}
 
-            <div className="d-flex flex-column chatbot-questions">
+            <div className="d-flex flex-column chatbot-questions" style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? 'block' : 'none')}}>
               <div className="row ml-0 mr-0">
                 <div className="col-sm-12 text-center">
                   {
@@ -77,10 +77,6 @@ class Chatbot extends Component {
                               }
                           })()}
 
-
-
-
-
                         </span>
                       ))
                       : ''
@@ -88,6 +84,19 @@ class Chatbot extends Component {
                 </div>
               </div>
             </div>
+
+
+            <div className="d-flex flex-column chatbot-questions" style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? 'block' : 'none')}}>
+              <div className="row ml-0 mr-0">
+                <div className="col-sm-12 text-center">
+                  {
+                    (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
+                      '' : "Scroll, if you don't feel like talking ⇣"
+                  }
+                </div>
+              </div>
+            </div>
+
           </TransitionGroup>
       </div>
     );
