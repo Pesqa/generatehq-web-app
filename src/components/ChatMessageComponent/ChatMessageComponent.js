@@ -34,7 +34,7 @@ class ChatMessage extends React.Component {
 
       this.props.getMessage(this.props);
 
-    }.bind(this), 500)
+    }.bind(this), 1000)
 
   }
 
