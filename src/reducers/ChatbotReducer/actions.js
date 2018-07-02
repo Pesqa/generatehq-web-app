@@ -34,7 +34,7 @@ export const getMessage = (chat_message) => {
           }
 
           dispatch({
-            type: action_types.GET_QUESTION_SUCCESS,
+            type: action_types.GET_MESSAGE_SUCCESS,
             data: response.data
           });
           return response;
@@ -44,7 +44,7 @@ export const getMessage = (chat_message) => {
       })
       .catch((error) => {
         dispatch({
-          type: action_types.GET_QUESTION_ERROR,
+          type: action_types.GET_MESSAGE_ERROR,
           error: error
         });
       })
@@ -53,14 +53,11 @@ export const getMessage = (chat_message) => {
 
 export const initMessages = () => {
   return (dispatch) => {
-    dispatch({
-      type: action_types.GET_MESSAGE_START
-    });
     return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages')
       .then((response) => {
         if (response.status === 200) {
           dispatch({
-            type: action_types.GET_QUESTION_SUCCESS,
+            type: action_types.GET_MESSAGE_START,
             data: response.data
           });
           return response;
@@ -70,7 +67,7 @@ export const initMessages = () => {
       })
       .catch((error) => {
         dispatch({
-          type: action_types.GET_QUESTION_ERROR,
+          type: action_types.GET_MESSAGE_ERROR,
           error: error
         });
       })

@@ -9,12 +9,18 @@ const initialState = {
 function chatbotReducer(state = initialState, action) {
   switch(action.type) {
     case action_types.GET_MESSAGE_START: {
-      return Object.assign({...state}, {
-        chatMessageList: [],
-        chatQuestions: []
-      });
+      if(action.data.chat_message === undefined){
+        return Object.assign({...state}, {
+          chatQuestions: action.data.chat_questions
+        });
+      }else{
+        return Object.assign({...state}, {
+          chatMessageList: [...state.chatMessageList, action.data.chat_message],
+          chatQuestions: action.data.chat_questions
+        });
+      }
     }
-    case action_types.GET_QUESTION_SUCCESS: {
+    case action_types.GET_MESSAGE_SUCCESS: {
       if(action.data.chat_message === undefined){
         return Object.assign({...state}, {
           chatQuestions: action.data.chat_questions
