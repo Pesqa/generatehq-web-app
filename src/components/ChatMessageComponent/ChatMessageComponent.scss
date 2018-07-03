@@ -9,9 +9,58 @@
   color: $grey1 !important;
   transition: all 500ms linear;
 
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes font-fade {
+    from {
+      color: transparent;
+    }
+    to {
+      color: "inherit";
+    }
+  }
+
+
+  &.-message{
+    animation: 500ms ease-out 0s 1 slideInFromLeft;
+
+    &.-transition{
+      animation: font-fade .6s ease-in-out;
+      -moz-animation: font-fade .6s ease-in-out; /* Firefox */
+      -webkit-animation: font-fade .6s ease-in-out; /* Safari and Chrome */
+      -o-animation: font-fade .6s ease-in-out; /* Opera */
+    }
+
+
+  }
+
+  &.-question{
+    animation: 500ms ease-out 0s 1 slideInFromLeft;
+
+    &.-transition{
+      animation: font-fade .6s ease-in-out;
+      -moz-animation: font-fade .6s ease-in-out; /* Firefox */
+      -webkit-animation: font-fade .6s ease-in-out; /* Safari and Chrome */
+      -o-animation: font-fade .6s ease-in-out; /* Opera */
+    }
+  }
+
   &.-answer{
     background-color: $dark-blue !important;
     color: $white !important;
+
+    &.-flying{
+      animation: 1s ease-in-out 0.6s 1 fly;
+    }
   }
 }
 

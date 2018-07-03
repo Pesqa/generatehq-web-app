@@ -7,7 +7,7 @@
 
   @media only screen and (min-width: 320px) {
     width: 75%;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 350px);
 
   }
 
@@ -28,14 +28,21 @@
 .chatbot-wrapper ul{
   list-style-type: none;
   position: relative;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 243px);
   padding-bottom: 100px;
   background-color: $grey2;
+
+  li.message{
+    text-align: left;
+  }
+
+  li.answer{
+    text-align: right;
+  }
+
 }
 
-.chatbot-wrapper li.message{
-  text-align: left;
-}
+.chatbot-wrapper
 
 .chatbot-wrapper li.response{
   text-align: right;
@@ -49,6 +56,22 @@
   width: 100%;
   position: absolute;
   left: 0px;
+
+  @keyframes slideInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .transition{
+    animation: 500ms ease-out 0s 1 slideInFromBottom;
+  }
 }
 
 .chatbot-chat-messages{
