@@ -2,12 +2,17 @@ import axios from 'axios';
 import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
 
-export const selectAnswer = (chat_answer, value) => {
+export const selectAnswer = (chat_answer, value, positionOffset) => {
   return (dispatch) => {
 
     var response = chat_answer;
 
-    if(response.content_type !== 'button'){
+    if(positionOffset !== undefined){
+      response = Object.assign({},chat_answer, {positionOffset: positionOffset});
+    }
+
+
+    if(response.content_type !== 'button' && value !== undefined){
       response = Object.assign({},chat_answer, {content: value});
     }
 
