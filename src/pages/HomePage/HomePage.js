@@ -44,7 +44,7 @@ class HomePage extends Component {
           <div className="d-flex flex-column  w-md-60 w-sm-100 overflow-y-auto-md _background-grey">
             <div className="">
 
-              <div className="agent-header-wrapper mt-3 mb-3">
+              <div className="agent-header-wrapper">
                   <div className="flex-row subtitle">
                     <div className="col-sm-12 text-left chatbot-subtitle">
                       {`${this.props.profile.headline}`}
@@ -59,7 +59,7 @@ class HomePage extends Component {
 
                   <div className="flex-row d-none d-md-block status">
                     <div className="col-sm-12 text-left">
-                      Online
+                      Online now
                     </div>
                   </div>
 
