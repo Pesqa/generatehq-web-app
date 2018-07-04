@@ -1,23 +1,30 @@
 @import '../../styles/App.scss';
 
-.chatbot-wrapper{
-  margin: 0 auto;
+.chatbot-overflow{
+  background: $grey2;
   position: relative;
-  padding-top: 20px;
+  border-bottom: 2px solid #eee;
 
-  @media only screen and (min-width: 320px) {
-    width: 75%;
-    min-height: calc(100vh - 350px);
-
+  @media only screen and (min-width: 587px) {
+    padding-bottom: 10px;
   }
 
-  @media only screen and (max-width: 320px) {
-    width: 100%;
-    min-height: calc(100vh - 380px);
+  @media only screen and (max-width: 587px) {
+    padding-bottom: 5px;
   }
+}
+
+.chatbot-wrapper{
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 768px;
+
+
 
   ul li:last-child{
-    margin-bottom: 100px;
   }
 }
 
@@ -26,11 +33,33 @@
 }
 
 .chatbot-wrapper ul{
-  list-style-type: none;
-  position: relative;
-  min-height: calc(100vh - 243px);
-  padding-bottom: 100px;
-  background-color: $grey2;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 148px 0;
+
+  @media only screen and (min-width: 587px) {
+    min-height: calc(100vh - 425px);
+    margin: 0 0 189px 0;
+  }
+
+  @media only screen and (max-width: 587px) {
+    min-height: calc(100vh - 527px);
+    margin: 0 0 90px 0;
+  }
+
+  @media only screen and (max-width: 320px) {
+    min-height: calc(100vh - 595px);
+    margin: 0 0 115px 0;
+  }
+
+  li {
+    margin: 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: 587px) {
+      padding: 0 1em;
+    }
+  }
 
   li.message{
     text-align: left;
@@ -42,7 +71,6 @@
 
 }
 
-.chatbot-wrapper
 
 .chatbot-wrapper li.response{
   text-align: right;
@@ -50,12 +78,17 @@
 
 
 .chatbot-questions{
-  bottom: 0px;
   margin-top: 20px;
-  margin-bottom: 20px;
   width: 100%;
   position: absolute;
-  left: 0px;
+
+  text-align: center;
+  padding: 6px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin: 0;
+
 
   @keyframes slideInFromBottom {
     0% {
@@ -68,9 +101,20 @@
     }
   }
 
-
   .transition{
     animation: 500ms ease-out 0s 1 slideInFromBottom;
+  }
+
+  .chatbot-buble{
+    margin-left: 10px;
+  }
+
+  >span {
+    display: inline-block;
+  }
+
+  &.-address{
+    bottom:120px;
   }
 }
 
@@ -83,44 +127,7 @@
 }
 
 
-.chatbot-button{
-  background-color: $dark-blue !important;
-  color: #FFFFFF !important;
-  margin-left: 10px !important;
-  font-size: 15px !important;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) !important;
-  max-width: 90% !important;
-  min-width: 44px !important;
-  min-height: 12px !important;
 
-  @media only screen and (max-width: 567px) {
-    padding: 5px !important;
-  }
-}
-
-.chatbot-wrapper > .chatbot-button ~ .chatbot-button {
-    margin-left: 0px !important;
-}
-
-
-.chatbot-buble{
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-  display: inline-block;
-  line-height: 1.45em;
-  border-radius: 3px;
-  margin: 0 0 1em 0;
-  text-align: left;
-  position: relative;
-  padding: 6px 12px;
-  background: #fff;
-  font-size: 15px;
-  border: none;
-  max-width: 90%;
-  min-width: 44px;
-  min-height: 12px;
-
-  /*animation: font-fade .6s ease-in-out;*/
-}
 
 
 
