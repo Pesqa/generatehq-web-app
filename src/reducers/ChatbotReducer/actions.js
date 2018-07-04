@@ -2,6 +2,15 @@ import axios from 'axios';
 import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
 
+const userDomainParams = () => {
+
+  var domainHash = parseDomain(window.location.href);
+  var fullDomain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
+  var userPath = window.location.pathname.split( '/' )[1];
+
+  return { domain: fullDomain, user_path: userPath  };
+}
+
 export const selectAnswer = (chat_answer, value, positionOffset) => {
   return (dispatch) => {
 
@@ -28,7 +37,7 @@ export const selectAnswer = (chat_answer, value, positionOffset) => {
 
 export const getMessage = (chat_message) => {
   return (dispatch) => {
-    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/' + chat_message.id)
+    return axios.post(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/get_message', Object.assign({}, userDomainParams(), {id: chat_message.id}) )
       .then((response) => {
         if (response.status === 200) {
 
@@ -58,7 +67,7 @@ export const getMessage = (chat_message) => {
 
 export const initMessages = () => {
   return (dispatch) => {
-    return axios.get(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages')
+    return axios.post(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/first_message', userDomainParams())
       .then((response) => {
         if (response.status === 200) {
           dispatch({
