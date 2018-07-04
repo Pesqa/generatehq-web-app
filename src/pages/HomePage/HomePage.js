@@ -45,20 +45,20 @@ class HomePage extends Component {
             <div className="">
 
               <div className="agent-header-wrapper">
-                  <div className="flex-row subtitle">
-                    <div className="col-sm-12 text-left chatbot-subtitle">
+                  <div className="flex-row">
+                    <div className="col-sm-12 text-left subtitle">
                       {`${this.props.profile.headline}`}
                     </div>
                   </div>
 
-                  <div className="flex-row d-none d-md-block name">
-                    <div className="col-sm-12 text-left">
+                  <div className="flex-row d-none d-md-block">
+                    <div className="col-sm-12 text-left name">
                       {`${this.props.profile.first_name} ${this.props.profile.last_name}` }
                     </div>
                   </div>
 
-                  <div className="flex-row d-none d-md-block status">
-                    <div className="col-sm-12 text-left">
+                  <div className="flex-row">
+                    <div className="col-sm-12 text-left status">
                       Online now
                     </div>
                   </div>
@@ -110,7 +110,7 @@ class HomePage extends Component {
 
                   <div className="row mt-3">
                     <div className="col-md-12 col-sm-12">
-                      {`${this.props.profile.first_name} ${this.props.profile.last_name}   ${this.props.profile.address}`}
+                      {`${this.props.profile.footer_text}`}
                     </div>
                   </div>
 
