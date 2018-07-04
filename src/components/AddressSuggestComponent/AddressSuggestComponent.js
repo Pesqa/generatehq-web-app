@@ -13,6 +13,12 @@ export default class AddressSuggest extends React.Component {
         value: "",
     }
 
+    constructor(props) {
+      super(props);
+
+      this.keyPress = this.keyPress.bind(this);
+    }
+
     handleInputChange = e => {
         this.setState({search: e.target.value, value: e.target.value})
     }
@@ -33,7 +39,7 @@ export default class AddressSuggest extends React.Component {
             <GoogleMapLoader
                 params={{
                     key: MY_API_KEY,
-                    libraries: "places,geocode",
+                    libraries: "places",
                 }}
                 render={googleMaps =>
                     googleMaps && (
@@ -61,7 +67,7 @@ export default class AddressSuggest extends React.Component {
                                 placeholder="Type and hit RETURN..."
                                 onChange={this.handleInputChange}
                                 onKeyDown={this.keyPress}
-                                className="chatbot-input"
+                                className="chatbot-buble -answer"
                             />
                         </GooglePlacesSuggest>
                     )
