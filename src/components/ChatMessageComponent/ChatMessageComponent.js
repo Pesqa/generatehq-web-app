@@ -41,7 +41,7 @@ class ChatMessage extends React.Component {
       setTimeout(function() {
         console.log(this.el_hidden.offsetWidth);
         this.scrollToBottom();
-        this.setState({style: { width: this.el_hidden.offsetWidth + 'px'}});
+        this.setState({style: { width: (this.el_hidden.offsetWidth + 2) + 'px'}});
 
         setTimeout(function() {
           this.setState({animationClass: '-transition', showMessage: true});
@@ -54,11 +54,11 @@ class ChatMessage extends React.Component {
 
       let styleSheet = document.styleSheets[0];
 
-      let keyframes =
-        `@keyframes fly {
-            from {transform:translate3d(-${this.el.offsetParent.offsetWidth - this.props.el.positionOffset.width - this.props.el.positionOffset.left}px, ${this.props.el.positionOffset.top - 72}px, 0px)}
-            to {transform: translate3d(0px, 0px, 0px);}
-        }`;
+      // let keyframes =
+      //   `@keyframes fly {
+      //       from {transform:translate3d(-${this.el.offsetParent.offsetWidth - this.props.el.positionOffset.width - this.props.el.positionOffset.left}px, ${this.props.el.positionOffset.top - 72}px, 0px)}
+      //       to {transform: translate3d(0px, 0px, 0px);}
+      //   }`;
 
 
       this.setState({content: this.props.content });
@@ -70,12 +70,12 @@ class ChatMessage extends React.Component {
   }
 
   scrollToBottom() {
-    this.props.parent.current.scrollIntoView(false,{ behavior: 'auto', block: 'start', inline: "start" });
+    this.props.parent.current.offsetParent.scrollIntoView(false,{ behavior: 'auto', block: 'start', inline: "start" });
   }
 
   render(){
     return(
-      <div key={this.props.id}>
+      <span key={this.props.id}>
         <div className={`chatbot-buble chatbot-message ${'-' + this.props.type} ${this.state.animationClass}`} ref={el => { this.el = el; }} style={this.state.style}>
           { this.state.showMessage ? this.state.content : '..'}
 
@@ -83,7 +83,7 @@ class ChatMessage extends React.Component {
         <div className={`chatbot-buble chatbot-message ${'-' + this.props.type} ${this.state.animationClass}`} ref={el_hidden => { this.el_hidden = el_hidden; }} style={this.state.showMessage ? {display: 'none'} : {visibility: 'hidden'}}>
             {this.props.content}
         </div>
-      </div>
+      </span>
     )
   }
 }

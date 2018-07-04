@@ -24,7 +24,7 @@ class InputField extends React.Component {
 
   render(){
     return(
-      <input type="text" className="chatbot-input" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} placeholder='Type and hit RETURN...' key={`chat_inputfield_${this.props.question}`}/>
+      <input type="text" className="chatbot-buble -answer" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} placeholder='Type and hit RETURN...' key={`chat_inputfield_${this.props.question}`}/>
     )
   }
 }

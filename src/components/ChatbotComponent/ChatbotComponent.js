@@ -33,7 +33,7 @@ class Chatbot extends Component {
   }
 
   selectAnswer = (answer, value, positionOffset) => {
-    this.props.selectAnswer(answer, undefined, positionOffset);
+    this.props.selectAnswer(answer, value, positionOffset);
   }
 
   addAnswer = (answer, value) => {
@@ -43,42 +43,39 @@ class Chatbot extends Component {
   render() {
     return (
 
-      <div key={`chat_bot`} className="chatbot-wrapper" ref={this.chatWrapper}>
+      <div key='chat_bot' className="chatbot-overflow">
+        <div key={`chat_bot`} className="chatbot-wrapper" ref={this.chatWrapper}>
 
-        <ul>
-          {this.props.messages.map(el => (
-            <li className={el.message_type} key={el.id}>
-              <ChatMessage type={el.message_type} parent={this.chatWrapper} id={el.id} content={el.content} el={el}  />
-            </li>
-          ))}
-        </ul>
+          <ul>
+            {this.props.messages.map(el => (
+              <li className={el.message_type} key={el.id}>
+                <ChatMessage type={el.message_type} parent={this.chatWrapper} id={el.id} content={el.content} el={el}  />
+              </li>
+            ))}
+          </ul>
+          <div className={`chatbot-questions ${'-' + ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? this.props.questions[0].content_type : 'none')}`} style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? 'block' : 'none')}}>
+            {
+              (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
+                this.props.questions.map(question => (
+                  <ChatAnswer type={question.content_type} parent={this.chatWrapper} key={`chat_answer_${question.id}`} addAnswer={this.addAnswer} selectAnswer={this.selectAnswer} question={question}  />
+                ))
+                : ''
+            }
+          </div>
 
-        <div className="d-flex flex-column chatbot-questions" style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? 'block' : 'none')}}>
-          <div className="row ml-0 mr-0">
-            <div className="col-sm-12 text-center">
-              {
-                (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
-                  this.props.questions.map(question => (
-                    <ChatAnswer type={question.content_type} parent={this.chatWrapper} key={`chat_answer_${question.id}`} addAnswer={this.addAnswer} selectAnswer={this.selectAnswer} question={question}  />
-                  ))
-                  : ''
-              }
+
+          <div className="d-flex flex-column chatbot-questions" style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0) && (this.props.messages.length < 3)  ? 'none' : 'block')}}>
+            <div className="row ml-0 mr-0">
+              <div className="col-sm-12 text-center">
+                {
+                  (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
+                    '' : "Scroll, if you don't feel like talking ⇣"
+                }
+              </div>
             </div>
           </div>
+
         </div>
-
-
-        <div className="d-flex flex-column chatbot-questions" style={{ dispay: ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? 'block' : 'none')}}>
-          <div className="row ml-0 mr-0">
-            <div className="col-sm-12 text-center">
-              {
-                (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
-                  '' : "Scroll, if you don't feel like talking ⇣"
-              }
-            </div>
-          </div>
-        </div>
-
       </div>
     );
   }

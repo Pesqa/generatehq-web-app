@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import InputField from '../InputField/InputField';
 import AddressSuggest from '../AddressSuggestComponent/AddressSuggestComponent';
 
+import './ChatAnswerComponent.css';
+
 import {
   getMessage
 } from '../../reducers/ChatbotReducer/actions';
@@ -16,10 +18,13 @@ class ChatAnswer extends React.Component {
 
     this.answerRef = React.createRef();
 
+    this.addAnswer = this.addAnswer.bind(this);
+    this.selectAnswer = this.selectAnswer.bind(this);
+
     this.state = {
       content: '..',
       showAnswers: false,
-      style: {},
+      style: {visibility: 'hidden'},
       animationClass: ''
     };
 
@@ -30,7 +35,7 @@ class ChatAnswer extends React.Component {
 
     setTimeout(function() {
 
-      this.setState({animationClass: 'transition', showAnswers: true});
+      this.setState({animationClass: 'transition', showAnswers: true, style: {visibility: 'visible'} });
 
       }.bind(this), 1000)
   }
@@ -51,18 +56,16 @@ class ChatAnswer extends React.Component {
 
   render(){
     return(
-      <span key={`chat_button_${this.props.id}`} style={this.state.showAnswers ? {display: 'initial'} : {visibility: 'hidden'}} >
-        {(() => {
+        (() => {
             switch (this.props.type) {
                 case 'button':
-                  return <a className={`btn chatbot-button ${this.state.animationClass}`} onClick={this.selectAnswer(this, this.props.question)} style={this.state.style} ref={ansRef => { this.ansRef = ansRef; }}>{ this.props.question.content } </a>;
+                  return <a className={`chatbot-buble -answer ${this.state.animationClass}`} onClick={this.selectAnswer(this, this.props.question)} style={this.state.style} ref={ansRef => { this.ansRef = ansRef; }}>{ this.props.question.content } </a>;
                 case 'address':
-                    return <AddressSuggest addAnswer={this.addAnswer} question={this.question} style={this.state.style} ref={ansRef => { this.ansRef = ansRef; }}/>;
+                    return <AddressSuggest addAnswer={this.addAnswer} question={this.props.question} style={this.state.style} ref={ansRef => { this.ansRef = ansRef; }}/>;
                 default :
                     return <InputField addAnswer={this.addAnswer} question={this.props.question} style={this.state.style} ref={ansRef => { this.ansRef = ansRef; }}/>;
             }
-        })()}
-      </span>
+        })()
 
     )
   }
