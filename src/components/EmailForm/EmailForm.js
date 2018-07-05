@@ -3,13 +3,23 @@ import axios from 'axios';
 import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import TextInput from '../TextInput/TextInput';
 
+import './EmailForm.css';
+
 class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      message: ''
+      message: '',
+      emailSent: false,
+      emailSentClass: ''
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.emailForm = React.createRef();
+    this.emailEmail = React.createRef();
+    this.emailMsg = React.createRef();
   }
 
   handleChange = (event) => {
@@ -33,21 +43,30 @@ class SignupForm extends Component {
         //   type: action_types.GET_ACCOUNT_INFO,
         //   data: response.data
         // });
+
         return response;
       } else {
         throw response;
       }
     })
 
+    this.emailForm.current.setAttribute('disabled', 'disabled');
+    this.setState({emailSent: true, emailSentClass: '-disabled', email: '', message: ''});
+
   }
 
   render() {
+    const { email, messagem, emailSent, emailSentClass } = this.state;
+
     return (
-      <form onSubmit={this.handleSubmit} className="mt-2">
-        <TextInput label="" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Your Email"/>
-        <TextInput label="" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"/>
-        <input type="submit" className="btn btn-black" value="Submit" />
-      </form>
+      <span>
+        <form onSubmit={this.handleSubmit} className={`email-form mt-2 ${this.state.emailSentClass}`} ref={this.emailForm}>
+          <TextInput label="" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Your Email" disabled={emailSent}/>
+          <TextInput label="" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message" disabled={emailSent}/>
+          <input type="submit" className="btn btn-black" value={`${this.state.emailSentClass ? 'Thank You' : 'Submit'}`} />
+        </form>
+      </span>
+
     );
   }
 }
