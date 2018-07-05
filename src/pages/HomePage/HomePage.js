@@ -81,7 +81,7 @@ class HomePage extends Component {
 
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
-                      {`${this.props.profile.bio}`}
+                      <div dangerouslySetInnerHTML={{__html: `${this.props.profile.bio}`}} />
 
                       <hr/>
                     </div>
