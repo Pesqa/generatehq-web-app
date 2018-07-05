@@ -39,7 +39,6 @@ class ChatMessage extends React.Component {
       this.setState({content: this.props.content});
 
       setTimeout(function() {
-        console.log(this.el_hidden.offsetWidth);
         this.scrollToBottom();
         this.setState({style: { width: (this.el_hidden.offsetWidth + 2) + 'px'}});
 
