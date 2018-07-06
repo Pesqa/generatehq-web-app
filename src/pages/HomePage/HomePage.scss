@@ -107,6 +107,53 @@
 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 99%);
   }
+
+  .agent-star-rating{
+    text-align: center;
+    margin: 32px auto !important;
+
+    img {
+      float: left;
+    }
+
+    &.-hidden{
+      display: none !important;
+    }
+
+    div.description{
+      margin-left: 10px;
+      color: $white;
+      font-weight: bold;
+      float: left;
+      padding-top: 5px;
+    }
+
+    &.-small{
+      font-size: 16px;
+      margin: 0px auto !important;
+      display: inline-block !important;
+      line-height: 16px;
+      margin-bottom: 10px !important;
+
+      &.-hidden{
+        display: none !important;
+      }
+
+      img {
+        float: left;
+        height: 20px;
+      }
+
+      div.description{
+        margin-left: 10px;
+        color: $white;
+        font-weight: bold;
+        float: left;
+        line-height: 16px;
+      }
+
+    }
+  }
 }
 
 .chatbot-element{

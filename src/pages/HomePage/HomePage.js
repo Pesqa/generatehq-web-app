@@ -35,10 +35,24 @@ class HomePage extends Component {
 
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
-          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'images/' + this.props.profile.user_path + '.jpg'}) no-repeat scroll center center`} }>
-            <div className="d-block d-sm-none agent-name">
-              <div className="">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
-           </div>
+          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'images/agents/' + this.props.profile.user_path + '.jpg'}) no-repeat scroll center center`} }>
+            <div className="d-block d-sm-none agent-name flex-column">
+
+                <div className="flex-row">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
+                <div className="flex-row lh-16">
+                  <div className={`agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold.length > 0)  ? '' : '-hidden')} -small `}>
+                    <img src="/images/five-stars.png" />
+                    <div className="description">{`${this.props.profile.homes_sold}` }</div>
+                  </div>
+                </div>
+             </div>
+
+             <br/>
+
+             <div className={`d-none d-md-block  agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold.length > 0)  ? '' : '-hidden')}`}>
+                <img src="/images/five-stars.png" />
+                <div className="description">{`${this.props.profile.homes_sold}` }</div>
+             </div>
           </div>
 
           <div className="d-flex flex-column  w-md-60 w-sm-100 overflow-y-auto-md _background-grey">
