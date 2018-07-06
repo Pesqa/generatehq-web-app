@@ -51,7 +51,7 @@ class SignupForm extends Component {
     })
 
     this.emailForm.current.setAttribute('disabled', 'disabled');
-    this.setState({emailSent: true, emailSentClass: '-disabled', email: '', message: ''});
+    this.setState({emailSent: true, emailSentClass: '-disabled'});
 
   }
 
@@ -60,10 +60,12 @@ class SignupForm extends Component {
 
     return (
       <span>
-        <form onSubmit={this.handleSubmit} className={`email-form mt-2 ${this.state.emailSentClass}`} ref={this.emailForm}>
-          <TextInput label="" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Your Email" disabled={emailSent}/>
-          <TextInput label="" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message" disabled={emailSent}/>
-          <input type="submit" className="btn btn-black" value={`${this.state.emailSentClass ? 'Thank You' : 'Submit'}`} />
+        <form onSubmit={this.handleSubmit} className={`email-form mt-4 mb-4 ${this.state.emailSentClass}`} ref={this.emailForm}>
+          <fieldset className="input" disabled={this.state.emailSent}>
+            <TextInput label="" name="email" type="email" value={this.state.email} onChange={this.handleChange} placeholder="Your Email"/>
+            <TextInput label="" name="message" type="text" value={this.state.message} onChange={this.handleChange} placeholder="Message"/>
+            <input type="submit" className="btn btn-black" value={`${this.state.emailSentClass ? 'Thank You!' : 'Submit'}`} />
+          </fieldset>
         </form>
       </span>
 
