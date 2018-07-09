@@ -94,7 +94,7 @@ class HomePage extends Component {
                   </div>
 
                   <div className="row">
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 agent-description">
                       <div dangerouslySetInnerHTML={{__html: `${this.props.profile.bio}`}} />
 
                       <hr/>
