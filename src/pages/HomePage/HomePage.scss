@@ -18,6 +18,16 @@
   background-color: $white;
   white-space: pre-line;
 
+  ul {
+    li{
+        margin: -10px 0;
+    }
+
+    ul{
+        margin: -10px 0;
+    }
+  }
+
   input {
     border: 0;
     outline: 0;
