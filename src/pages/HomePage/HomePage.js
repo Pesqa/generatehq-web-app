@@ -110,7 +110,7 @@ class HomePage extends Component {
 
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
-                      Interested in working together, exchanging, or just talk about coffee? Great! Get in touch, I'm friendly.
+                      <div dangerouslySetInnerHTML={{__html: `${this.props.profile.get_in_touch_desc}`}} />
                     </div>
                   </div>
 
