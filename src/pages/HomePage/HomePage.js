@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import Chatbot from '../../components/ChatbotComponent/ChatbotComponent';
  import EmailForm from '../../components/EmailForm/EmailForm';
@@ -125,6 +126,14 @@ class HomePage extends Component {
                   <div className="row mt-3">
                     <div className="col-md-12 col-sm-12">
                       {`${this.props.profile.footer_text}`}
+                    </div>
+                  </div>
+
+                  <div className="row mt-3">
+                    <div className="col-md-12 col-sm-12">
+                      <Link to={`/${this.props.profile.user_path}/privacy-policy`}>
+                        { 'Privacy Policy' }
+                      </Link>
                     </div>
                   </div>
 
