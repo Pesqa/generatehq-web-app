@@ -1,4 +1,5 @@
 import axios from 'axios';
+import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
 
 const initialState = {
@@ -39,7 +40,11 @@ function chatbotReducer(state = initialState, action) {
       });
     }
     case action_types.CHAT_FINISHED: {
-      axios.post(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/send_report', { messages: state.chatMessageList } )
+      var domainHash = parseDomain(window.location.href);
+      var fullDomain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
+      var userPath = window.location.pathname.split( '/' )[1];
+
+      axios.post(process.env.REACT_APP_API_HOST + '/api/v1/chat_messages/send_report', { domain: fullDomain, user_path: userPath, messages: state.chatMessageList } )
       return Object.assign({...state});
     }
     default: {
