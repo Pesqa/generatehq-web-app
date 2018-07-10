@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
@@ -12,16 +13,18 @@ class AppRouter extends Component {
     return (
       <Router>
         <div>
-          <Route
-            exact
-            path={'/:user_path/privacy-policy'}
-            component={PrivacyPolicyPage}
-          />
-          <Route
-            exact
-            path={'/:user_path'}
-            component={HomePage}
-          />
+          <Switch>
+            <Route
+              exact
+              path={'/privacy-policy'}
+              component={PrivacyPolicyPage}
+            />
+            <Route
+              exact
+              path={'/:user_path'}
+              component={HomePage}
+            />
+          </Switch>
         </div>
       </Router>
     )
