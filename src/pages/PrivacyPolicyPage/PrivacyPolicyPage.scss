@@ -1,0 +1,16 @@
+@import '../../styles/App.scss';
+
+.privacy-container{
+  background-color: $white;
+  max-width: 1024px;
+  margin: auto;
+
+  ul.privacy-policy {
+    li{
+        margin: 10px 0;
+      &.-bold{
+        font-weight: bold;
+      }
+    }
+  }
+}
