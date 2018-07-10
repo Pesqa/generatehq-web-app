@@ -131,9 +131,7 @@ class HomePage extends Component {
 
                   <div className="row mt-3">
                     <div className="col-md-12 col-sm-12">
-                      <Link to={`/${this.props.profile.user_path}/privacy-policy`}>
-                        { 'Privacy Policy' }
-                      </Link>
+                      <a href="/privacy-policy" target="_blank">Privacy Policy</a>
                     </div>
                   </div>
 
