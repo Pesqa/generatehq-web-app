@@ -5,7 +5,8 @@ import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 
 import Chatbot from '../../components/ChatbotComponent/ChatbotComponent';
- import EmailForm from '../../components/EmailForm/EmailForm';
+import EmailForm from '../../components/EmailForm/EmailForm';
+import ReviewIframe from '../../components/ReviewIframeComponent/ReviewIframeComponent';
 
 import './HomePage.css';
 
@@ -36,7 +37,7 @@ class HomePage extends Component {
 
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
-          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'images/agents/' + this.props.profile.user_path + '.jpg'}) no-repeat scroll center center`} }>
+          <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${'images/agents/' + this.props.profile.user_path + '.jpg'}) no-repeat scroll top center`} }>
             <div className="d-block d-sm-none agent-name flex-column">
 
                 <div className="flex-row">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
@@ -102,6 +103,30 @@ class HomePage extends Component {
                     </div>
 
                   </div>
+                  <div style={ { display: ((this.props.facebook_reviews !== undefined) && (this.props.facebook_reviews.length > 0) ? 'block' : 'none')} }>
+                    <div className="row">
+                      <div className="col-md-7 col-sm-12">
+                        <h1>Testimonials</h1>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="col-md-12 col-sm-12 agent-description">
+
+                          {
+                            this.props.facebook_reviews.map(el => (
+                              <div>
+                                <ReviewIframe html_link={el.html_link} html_content={el.html_content} key={el.html_link} />
+                              </div>
+                            ))
+
+                          }
+
+                        <hr/>
+                      </div>
+
+                    </div>
+                  </div>
 
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
@@ -147,7 +172,8 @@ class HomePage extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile
+    profile: state.profile.profile,
+    facebook_reviews: state.profile.facebook_reviews
   };
 }
 
