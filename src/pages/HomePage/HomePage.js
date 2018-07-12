@@ -99,7 +99,7 @@ class HomePage extends Component {
                     <div className="col-md-12 col-sm-12 agent-description">
                       <div dangerouslySetInnerHTML={{__html: `${this.props.profile.bio}`}} />
 
-                      <hr/>
+                      <hr className="mt-5 mb-5"/>
                     </div>
 
                   </div>
@@ -143,6 +143,8 @@ class HomePage extends Component {
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
                       <EmailForm />
+
+                      <hr className="mt-5 mb-5"/>
                     </div>
                   </div>
 
