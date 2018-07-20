@@ -12,6 +12,7 @@ const userDomainParams = () => {
 }
 
 export const selectAnswer = (chat_answer, value, positionOffset) => {
+  var dataLayer = window.dataLayer;
   return (dispatch) => {
 
     var response = chat_answer;
@@ -23,6 +24,13 @@ export const selectAnswer = (chat_answer, value, positionOffset) => {
 
     if(response.content_type !== 'button' && value !== undefined){
       response = Object.assign({},chat_answer, {content: value});
+    }
+
+    if(chat_answer.content_type === 'phone'){
+      dataLayer.push({'event': 'new_phone'});
+
+    }else if(chat_answer.content_type === 'email'){
+      dataLayer.push({'event': 'new_email'});
     }
 
 
