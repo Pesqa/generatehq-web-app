@@ -34,7 +34,7 @@ class Chatbot extends Component {
     const agentImgHeight = document.getElementsByClassName('agent-image')[0].offsetHeight;
     const agentHeaderHeight = document.getElementsByClassName('agent-header-wrapper')[0].offsetHeight;
 
-    const agentSectionHeight = (window.innerWidth > 560) ? (headerHeight + agentHeaderHeight + 60) : (headerHeight + agentImgHeight + agentHeaderHeight + 60);
+    const agentSectionHeight = (window.innerWidth > 560) ? (headerHeight + agentHeaderHeight + 60) : (headerHeight + agentImgHeight + agentHeaderHeight + 30);
     const chatMinHeight = window.innerHeight - agentSectionHeight;
 
     this.setState({ chatMinHeight});
