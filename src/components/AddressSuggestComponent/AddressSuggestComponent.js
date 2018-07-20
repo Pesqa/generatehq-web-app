@@ -24,7 +24,9 @@ export default class AddressSuggest extends React.Component {
     }
 
     handleSelectSuggest = (geocodedPrediction, originalPrediction) => {
-        this.setState({search: "", value: geocodedPrediction.formatted_address})
+      this.setState({search: "", value: geocodedPrediction.formatted_address})
+
+      this.props.addAnswer(this.props.question, geocodedPrediction.formatted_address);
     }
 
     keyPress = (e) => {
