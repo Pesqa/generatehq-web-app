@@ -37,14 +37,13 @@ class Chatbot extends Component {
     const agentSectionHeight = (window.innerWidth > 560) ? (headerHeight + agentHeaderHeight + 60) : (headerHeight + agentImgHeight + agentHeaderHeight);
     const chatMinHeight = window.innerHeight - agentSectionHeight;
 
-    this.setState({ chatMinHeight, hideScrollMessage: false });
+    this.setState({ chatMinHeight});
 
     this.props.initMessages();
   }
 
   selectAnswer = (answer, value, positionOffset) => {
     this.props.selectAnswer(answer, value, positionOffset);
-    this.props.hideScrollMessage();
   }
 
   addAnswer = (answer, value) => {
@@ -108,8 +107,7 @@ function dispatchToProps(dispatch) {
   return bindActionCreators({
     initMessages,
     getMessage,
-    selectAnswer,
-    hideScrollMessage
+    selectAnswer
   }, dispatch);
 }
 
