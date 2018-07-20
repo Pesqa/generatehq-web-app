@@ -39,11 +39,11 @@ class ChatMessage extends React.Component {
       this.setState({content: this.props.content});
 
       setTimeout(function() {
-        this.scrollToBottom();
         this.setState({style: { width: (this.el_hidden.offsetWidth + 2) + 'px'}});
 
         setTimeout(function() {
           this.setState({animationClass: '-transition', showMessage: true});
+          this.scrollToBottom();
         }.bind(this), 500);
 
         this.props.getMessage(this.props);
@@ -69,7 +69,17 @@ class ChatMessage extends React.Component {
   }
 
   scrollToBottom() {
-    this.props.parent.current.offsetParent.scrollIntoView(false,{ behavior: 'auto', block: 'start', inline: "start" });
+    const headerHeight = document.getElementsByClassName('header-wrapper')[0].offsetHeight;
+    const agentImgHeight = document.getElementsByClassName('agent-image')[0].offsetHeight;
+    const agentContent = document.getElementById('agents-content');
+    const agentChatContent = document.getElementById('agents-chat-content');
+
+    const agentSectionHeight = (window.innerWidth > 560) ? (headerHeight + agentChatContent.offsetHeight) : (headerHeight + agentChatContent.offsetHeight + agentImgHeight);
+
+    if(window.innerHeight <= agentSectionHeight - agentContent.scrollTop){
+      this.props.parent.current.offsetParent.scrollIntoView(false,{ behavior: 'auto', block: 'start', inline: "start" });
+    }
+
   }
 
   render(){

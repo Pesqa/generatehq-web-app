@@ -18,7 +18,7 @@ import AddressSuggest from '../AddressSuggestComponent/AddressSuggestComponent';
 import {
   initMessages,
   getMessage,
-  selectAnswer,
+  selectAnswer
 } from '../../reducers/ChatbotReducer/actions';
 
 class Chatbot extends Component {
@@ -29,11 +29,22 @@ class Chatbot extends Component {
   }
 
   componentDidMount() {
+
+    const headerHeight = document.getElementsByClassName('header-wrapper')[0].offsetHeight;
+    const agentImgHeight = document.getElementsByClassName('agent-image')[0].offsetHeight;
+    const agentHeaderHeight = document.getElementsByClassName('agent-header-wrapper')[0].offsetHeight;
+
+    const agentSectionHeight = (window.innerWidth > 560) ? (headerHeight + agentHeaderHeight + 60) : (headerHeight + agentImgHeight + agentHeaderHeight);
+    const chatMinHeight = window.innerHeight - agentSectionHeight;
+
+    this.setState({ chatMinHeight, hideScrollMessage: false });
+
     this.props.initMessages();
   }
 
   selectAnswer = (answer, value, positionOffset) => {
     this.props.selectAnswer(answer, value, positionOffset);
+    this.props.hideScrollMessage();
   }
 
   addAnswer = (answer, value) => {
@@ -41,12 +52,16 @@ class Chatbot extends Component {
   }
 
   render() {
+    const questionType = ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? this.props.questions[this.props.questions.length - 1].content_type : '');
+    const messageCount = ((this.props.messages !== undefined) && (this.props.messages.length > 0 && this.props.messages.length <= 3)  ? 'small' : '');
+    const minHeight = (this.state !== null && this.state.chatMinHeight !== null) ? (this.state.chatMinHeight + 'px') : 'auto';
+
     return (
 
       <div key='chat_bot' className="chatbot-overflow">
         <div key={`chat_bot`} className="chatbot-wrapper" ref={this.chatWrapper}>
 
-          <ul>
+          <ul className={`${ questionType } ${ messageCount }`} style={{ minHeight: `${minHeight}`}}>
             {this.props.messages.map(el => (
               <li className={el.message_type} key={el.id}>
                 <ChatMessage type={el.message_type} parent={this.chatWrapper} id={el.id} content={el.content} el={el}  />
@@ -68,7 +83,7 @@ class Chatbot extends Component {
             <div className="row ml-0 mr-0">
               <div className="col-sm-12 text-center">
                 {
-                  (this.props.questions !== undefined) && (this.props.questions.length > 0) ?
+                  (this.props.questions !== undefined) && (this.props.questions.length > 0 || this.props.hideScrollMsg) ?
                     '' : "Scroll, if you don't feel like talking ⇣"
                 }
               </div>
@@ -84,7 +99,8 @@ class Chatbot extends Component {
 function stateToProps(state) {
   return {
     messages: state.questions.chatMessageList,
-    questions: state.questions.chatQuestions
+    questions: state.questions.chatQuestions,
+    hideScrollMsg: state.questions.hideScrollMsg
   };
 }
 
@@ -93,6 +109,7 @@ function dispatchToProps(dispatch) {
     initMessages,
     getMessage,
     selectAnswer,
+    hideScrollMessage
   }, dispatch);
 }
 
