@@ -57,8 +57,8 @@ class HomePage extends Component {
              </div>
           </div>
 
-          <div className="d-flex flex-column  w-md-60 w-sm-100 overflow-y-auto-md _background-grey">
-            <div className="">
+          <div id='agents-content' className="d-flex flex-column  w-md-60 w-sm-100 overflow-y-auto-md _background-grey">
+            <div id='agents-chat-content' className="">
 
               <div className="agent-header-wrapper">
                   <div className="flex-row">
@@ -148,17 +148,15 @@ class HomePage extends Component {
                     </div>
                   </div>
 
-
-
                   <div className="row mt-3">
                     <div className="col-md-12 col-sm-12">
                       {`${this.props.profile.footer_text}`}
                     </div>
                   </div>
 
-                  <div className="row mt-3">
+                  <div className="row mt-3 footer text-right">
                     <div className="col-md-12 col-sm-12">
-                      <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                      <a href="/privacy-policy" className="black" target="_blank">Privacy Policy</a>
                     </div>
                   </div>
 

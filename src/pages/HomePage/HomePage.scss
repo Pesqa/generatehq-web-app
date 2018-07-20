@@ -74,8 +74,14 @@
 }
 
 .footer{
-  position:fixed;bottom:0;left:0;
-                background:lightgray;width:100%;
+  a{
+    font-size: 14px;
+    cursor: pointer;
+
+    &.black{
+      color: $black;
+    }
+  }
 }
 
 .flex{
