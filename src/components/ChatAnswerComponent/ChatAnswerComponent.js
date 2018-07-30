@@ -34,9 +34,7 @@ class ChatAnswer extends React.Component {
   componentDidMount() {
 
     setTimeout(function() {
-
       this.setState({animationClass: 'transition', showAnswers: true, style: {visibility: 'visible'} });
-
       }.bind(this), 1000)
   }
 
