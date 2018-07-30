@@ -1,0 +1,37 @@
+@import '../../styles/App.scss';
+
+.testimonial{
+
+  padding: 25px;
+  border: 1px solid $grey4;
+  min-width: 300px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+
+  .author{
+    font-size: 21px;
+    color: $grey1;
+  }
+
+  .info{
+    font-size: 13px;
+    color: $grey3;
+  }
+
+  .testimonial-content{
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+
+  .stars{
+    height: 20px;
+  }
+
+  .date{
+    margin-top: 7px;
+    font-size: 15px;
+  }
+
+
+}
