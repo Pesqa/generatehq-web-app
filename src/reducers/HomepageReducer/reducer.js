@@ -3,7 +3,8 @@ import * as action_types from './constants';
 
 const initialState = {
   profile: { first_name: 'Agent'},
-  facebook_reviews: []
+  facebook_reviews: [],
+  testimonials: []
 };
 
 function homepageReducer(state = initialState, action) {
@@ -11,7 +12,8 @@ function homepageReducer(state = initialState, action) {
     case action_types.GET_ACCOUNT_INFO: {
       return Object.assign({...state}, {
         profile: action.data.profile,
-        facebook_reviews: action.data.facebook_reviews
+        facebook_reviews: action.data.facebook_reviews,
+        testimonials: action.data.testimonials
       });
 
     }

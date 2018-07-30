@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Chatbot from '../../components/ChatbotComponent/ChatbotComponent';
 import EmailForm from '../../components/EmailForm/EmailForm';
 import ReviewIframe from '../../components/ReviewIframeComponent/ReviewIframeComponent';
+import Testimonial from '../../components/TestimonialComponent/TestimonialComponent';
 
 import './HomePage.css';
 
@@ -128,6 +129,30 @@ class HomePage extends Component {
                     </div>
                   </div>
 
+                  <div style={ { display: ((this.props.testimonials !== undefined) && (this.props.testimonials.length > 0) ? 'block' : 'none')} }>
+                    <div className="row">
+                      <div className="col-md-7 col-sm-12">
+                        <h1>Testimonials</h1>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="col-md-12 col-sm-12 agent-description">
+
+                          {
+                            this.props.testimonials.map(el => (
+                              <div>
+                                <Testimonial author={el.author} content={el.content} additional_info={el.additional_info} formated_date={el.formated_date} star_count={el.star_count} key={el.author} />
+                              </div>
+                            ))
+
+                          }
+
+                      </div>
+
+                    </div>
+                  </div>
+
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
                       <h1>Get in touch</h1>
@@ -173,7 +198,8 @@ class HomePage extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
-    facebook_reviews: state.profile.facebook_reviews
+    facebook_reviews: state.profile.facebook_reviews,
+    testimonials: state.profile.testimonials
   };
 }
 
