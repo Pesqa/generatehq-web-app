@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
 
-import './ProfileTestimonials.css';
+import './ProfileTestimonial.css';
 
 class ProfileTestimonialComponent extends Component {
   render() {

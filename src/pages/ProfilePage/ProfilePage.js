@@ -59,7 +59,9 @@ class ProfilePage extends Component {
         <SellersAndBuyersComponent />
         {testimonials.length === 0 && <div style={{marginBottom: '50px'}} />}
         {testimonials.length > 0 && <ProfileTestimonialsComponent />}
-        <MapBoxComponent />
+        <div className="flex-column">
+          <MapBoxComponent />
+        </div>
         <GuideComponent />
         <LocationCopyComponent />
         <CtaComponent />
