@@ -9,9 +9,7 @@ class ButtonComponent extends Component {
     const buttonTitle = title || 'Book a free valuation';
 
     return (
-      <div className="button-container">
-        <a className="btn btn-default generate-button" href={`/${user_path}`}>{buttonTitle}</a>
-      </div>
+      <a className="btn btn-default generate-button" href={`/${user_path}`}>{buttonTitle}</a>
     );
   }
 }

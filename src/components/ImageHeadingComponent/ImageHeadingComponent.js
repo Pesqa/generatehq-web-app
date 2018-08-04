@@ -21,21 +21,13 @@ class ImageHeading extends Component {
     };
 
     return (
-      <div className="ih-wrapper" style={{ background: `url('${content.image}')`, backgroundSize: 'cover'}}>
-        <div className="caption-info">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-10 caption-info-outer">
-                <div className="caption-info-inner text-center">
-                  <h1 className="animated fadeInDown">
-                    {content.title}
-                  </h1>
-                  <p className="animated fadeInUp">{content.description}</p>
-                  <Button user_path={profile.user_path} title={content.button}/>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="d-flex relative ih-wrapper flex-xl-column justify-content-center align-items-center" style={{ background: `url('${content.image}')`, backgroundSize: 'cover'}}>
+        <div className="text-center heading-container">
+          <h1 className="animated fadeInDown text-white agent-name">
+            {content.title}
+          </h1>
+          <p className="animated fadeInUp text-white agent-location">{content.description}</p>
+          <Button user_path={profile.user_path} title={content.button}/>
         </div>
       </div>
     )

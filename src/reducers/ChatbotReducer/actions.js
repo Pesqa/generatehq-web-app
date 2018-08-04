@@ -1,5 +1,4 @@
 import axios from 'axios';
-import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
 import { getDomain } from '../../helpers/domain';
 

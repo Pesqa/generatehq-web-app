@@ -1,18 +1,13 @@
-.button-container {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.generate-button {
-    border: 0 none;
-    background: #ffa500;
-    color: #fff;
-    font-size: 24px;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 13px 30px;
-    border-radius: 7px;
+.btn.generate-button {
+  border: 0 none;
+  background: #ffa500;
+  color: #fff;
+  font-size: 24px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 50px;
+  border-radius: 7px;
 }
 
 .generate-button:hover {

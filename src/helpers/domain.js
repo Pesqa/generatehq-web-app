@@ -1,4 +1,4 @@
-import parseDomain from 'parse-domain';
+import parseDomain from '../node_modules_src/parse-domain/lib/parseDomain';
 
 export const getDomain = () => {
   const domainHash = parseDomain(window.location.href);
@@ -7,5 +7,5 @@ export const getDomain = () => {
     domain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
   }
 
-  return domain
+  return domain;
 }

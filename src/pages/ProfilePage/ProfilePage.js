@@ -52,16 +52,18 @@ class ProfilePage extends Component {
             </span>
             <a className="flex" href={`${'tel:' + profile.phone_number}`} rel="noopener noreferrer" target="_blank">{`${profile.phone_number}`}</a>
           </div>
-          <ImageHeading user_path={this.props.match.params.user_path} />
-          <SellersAndBuyersComponent />
-          {testimonials.length === 0 && <div style={{marginBottom: '50px'}} />}
-          {testimonials.length > 0 && <ProfileTestimonialsComponent />}
-          <MapBoxComponent />
-          <GuideComponent />
-          <LocationCopyComponent />
-          <CtaComponent />
-          <FooterComponent />
-       </div>
+        </div>
+        <div className="flex-column">
+          <ImageHeading />
+        </div>
+        <SellersAndBuyersComponent />
+        {testimonials.length === 0 && <div style={{marginBottom: '50px'}} />}
+        {testimonials.length > 0 && <ProfileTestimonialsComponent />}
+        <MapBoxComponent />
+        <GuideComponent />
+        <LocationCopyComponent />
+        <CtaComponent />
+        <FooterComponent />
       </div>
     );
   }
