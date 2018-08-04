@@ -83,7 +83,7 @@ class SellersAndBuyers extends Component {
         <div className="step-info-inner-desktop">
           <h2 className="headerTitle">{tabTitle.title}</h2>
           <h5 className="subHeaderTitle">{tabTitle.subTitle}</h5>
-          <div className="stepContainer">
+          <div className="stepContainer mb-5">
             <img src={profile.background_image} className="profile-img" alt=""/>
             <div className="stepContent">
               {
@@ -99,7 +99,7 @@ class SellersAndBuyers extends Component {
               <a href={`/${profile.user_path}`}>Chat with {`${profile.first_name} ${profile.last_name}`}</a>
             </div>
           </div>
-          <Button user_path={profile.user_path} />
+          <Button user_path={profile.user_path}/>
         </div>
         <div className="step-info-inner-mobile">
           <h5 className="subHeaderTitle">{tabTitle.subTitle}</h5>
