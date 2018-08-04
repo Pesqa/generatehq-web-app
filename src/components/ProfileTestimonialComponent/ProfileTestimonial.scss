@@ -62,8 +62,12 @@
   color: #a6a6a6;
   text-align: center;
   font-weight: bold;
-  width: 77%;
   line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+  height: 55px;
+  padding: 0 20px;
 }
 
 .name {

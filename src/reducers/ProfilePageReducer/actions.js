@@ -31,3 +31,12 @@ export const initProfile = (userPath) => {
       })
   }
 }
+
+export const setProfileType = (type) => {
+  return (dispatch) => {
+    dispatch({
+      type: action_types.SET_PROFILE_TYPE,
+      data: type
+    });
+  }
+}

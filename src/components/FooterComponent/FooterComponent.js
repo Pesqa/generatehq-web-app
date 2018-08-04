@@ -11,11 +11,11 @@ class FooterComponent extends Component {
         <div className="footer-text">{profile.footer_text}</div>
         <div className="footer-menu">
           <div className="footer-anchors">
-            <a href="" className="footer-anchor">2018 Generatehq</a>
-            <a href="" className="footer-anchor">Terms of use</a>
-            <a href="" className="footer-anchor">Privecy policy</a>
+            <div><a href="" className="footer-anchor">2018 Generatehq</a></div>
+            <div><a href="" className="footer-anchor">Terms of use</a></div>
+            <div><a href="/privacy-policy" className="footer-anchor">Privecy policy</a></div>
           </div>
-          <img src={generateLogo} alt=""/>
+          <img src={generateLogo} alt="" className="footer-logo"/>
         </div>
       </div>
     );

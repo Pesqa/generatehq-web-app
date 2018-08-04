@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Testinomial from '../TestinomialComponent/TestinomialComponent';
+import Testinomial from '../ProfileTestimonialComponent/ProfileTestimonialComponent';
 import Button from '../ButtonComponent/ButtonComponent';
 
-import './Testinomials.css';
+import './ProfileTestimonials.css';
 
-class TestinomialsComponent extends Component {
+class ProfileTestimonialsComponent extends Component {
   render() {
+    const { profile, testimonials } = this.props;
+
     return (
       <div className="testinomials-wrapper">
         <div className="container">
@@ -17,12 +19,13 @@ class TestinomialsComponent extends Component {
               <h1 className="testinomials-heading">What my clients say about working with me.</h1>
             </div>
             <div className="testinomials">
-              <Testinomial/>
-              <Testinomial/>
-              <Testinomial/>
-              <Testinomial/>
+              {
+                testimonials.slice(1, 5).map((testimonial, i) => {
+                  return <Testinomial testimonial={testimonial} key={i}/>
+                })
+              }
             </div>
-            <Button user_path={this.props.profile.user_path}/>
+            <Button user_path={profile.user_path}/>
           </div>
         </div>
       </div>
@@ -33,7 +36,8 @@ class TestinomialsComponent extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
+    testimonials: state.profile.testimonials,
   };
 }
 
-export default connect(stateToProps, null)(TestinomialsComponent);
+export default connect(stateToProps, null)(ProfileTestimonialsComponent);

@@ -9,8 +9,23 @@
   width: 80%;
 }
 
+.location-header-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .location-header {
   text-align: center;
   padding-bottom: 20px;
   font-weight: bolder;
+}
+
+@media (max-width: 767px) {
+  .location-section {
+    padding-top: 30px;
+  }
+
+  .location-header-text {
+    font-size: 20px;
+  }
 }

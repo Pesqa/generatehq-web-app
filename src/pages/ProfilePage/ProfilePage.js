@@ -7,7 +7,7 @@ import 'react-activity/dist/react-activity.css';
 import './ProfilePage.css';
 
 import ImageHeading from '../../components/ImageHeadingComponent/ImageHeadingComponent';
-import TestinomialsComponent from '../../components/TestinomialsComponent/TestinomialsComponent';
+import ProfileTestimonialsComponent from '../../components/ProfileTestimonialsComponent/ProfileTestimonialsComponent';
 import SellersAndBuyersComponent from '../../components/SellersAndBuyersComponent/SellersAndBuyersComponent';
 import MapBoxComponent from '../../components/MapBoxComponent/MapBoxComponent';
 import GuideComponent from '../../components/GuideComponent/GuideComponent';
@@ -41,7 +41,7 @@ class ProfilePage extends Component {
       </div>;
     }
 
-    const { profile } = this.props;
+    const { profile, testimonials } = this.props;
 
     return (
       <div className="overflow-hidden absolute absolute-fill flex flex-column-md flex-column-sm">
@@ -54,7 +54,8 @@ class ProfilePage extends Component {
           </div>
           <ImageHeading user_path={this.props.match.params.user_path} />
           <SellersAndBuyersComponent />
-          <TestinomialsComponent />
+          {testimonials.length === 0 && <div style={{marginBottom: '50px'}} />}
+          {testimonials.length > 0 && <ProfileTestimonialsComponent />}
           <MapBoxComponent />
           <GuideComponent />
           <LocationCopyComponent />
@@ -69,7 +70,8 @@ class ProfilePage extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
-    facebook_reviews: state.profile.facebook_reviews
+    facebook_reviews: state.profile.facebook_reviews,
+    testimonials: state.profile.testimonials,
   };
 }
 

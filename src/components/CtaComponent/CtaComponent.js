@@ -5,12 +5,15 @@ import './index.css';
 
 class CtaComponent extends Component {
   render() {
-    const { profile } = this.props;
+    const { profile, profileType } = this.props;
+    const headerTitle = profileType === 'seller' ? 'selling' : 'buying';
+    const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
+
     return (
       <div className="cta-section">
-        <h2>Thinking about selling?</h2>
-        <p>Lets's chat</p>
-        <Button user_path={profile.user_path} />
+        <h2 className="cta-header">{`Thinking about ${headerTitle}?`}</h2>
+        <p className="cta-sub-header">Lets's chat</p>
+        <Button user_path={profile.user_path} title={buttonTitle}/>
       </div>
     );
   }
@@ -19,6 +22,7 @@ class CtaComponent extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
+    profileType: state.profilePage.profile_type
   };
 }
 

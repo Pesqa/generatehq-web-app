@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import StepCarousel from '../StepCarouselComponent/StepCarouselComponent';
 import Button from '../ButtonComponent/ButtonComponent';
 import topAgent from './top-agent.png';
 import './index.css';
+
+import {
+  setProfileType
+} from '../../reducers/ProfilePageReducer/actions';
 
 const sellersStep = [{
   step: 'Step 1 - Design a Marketing Plan',
@@ -44,32 +49,33 @@ const buyersTitle = {
 }
 
 class SellersAndBuyers extends Component {
-  state = {
-    slideIndex: 0,
+  static defaultProps = {
+    profileType: 'seller',
   }
 
-  onTabClick(index) {
-    this.setState({ slideIndex: index })
+  onTabClick(index, type) {
+    this.props.setProfileType(type)
   }
 
   render() {
-    const { profile } = this.props;
-    const steps = this.state.slideIndex === 0 ? sellersStep : buyersStep;
-    const tabTitle = this.state.slideIndex === 0 ? sellersTitle : buyersTitle;
+    const { profile, profileType } = this.props;
+
+    const steps = profileType === 'seller' ? sellersStep : buyersStep;
+    const tabTitle = profileType === 'seller' ? sellersTitle : buyersTitle;
 
     return(
       <div className="step-info">
         <div className="banner">
           <ol className="carousel-indicators">
               <li
-                onClick={() => this.onTabClick(0)}
-                className={ this.state.slideIndex === 0 ? 'active' : ''}
+                onClick={() => this.onTabClick(0, 'seller')}
+                className={ profileType === 'seller' ? 'active' : ''}
               >
                 <span className="slide-link">Sellers</span>
               </li>
               <li
-                onClick={() => this.onTabClick(1)}
-                className={ this.state.slideIndex === 1 ? 'active' : ''}
+                onClick={() => this.onTabClick(1, 'buyer')}
+                className={ profileType === 'buyer' ? 'active' : ''}
               >
                 <span className="slide-link">Buyers</span>
               </li>
@@ -114,7 +120,14 @@ class SellersAndBuyers extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
+    profileType: state.profilePage.profile_type
   };
 }
 
-export default connect(stateToProps, null)(SellersAndBuyers);
+function dispatchToProps(dispatch) {
+  return bindActionCreators({
+    setProfileType
+  }, dispatch);
+}
+
+export default connect(stateToProps, dispatchToProps)(SellersAndBuyers);

@@ -1,14 +1,14 @@
-import axios from 'axios';
 import * as action_types from './constants';
 
 const initialState = {
   profile: {
     first_name: '',
-    last_name: ''
+    last_name: '',
   },
+  profile_type: 'seller',
 };
 
-function homepageReducer(state = initialState, action) {
+function profilepageReducer(state = initialState, action) {
   switch (action.type) {
     case action_types.GET_ACCOUNT_INFO:
       {
@@ -16,6 +16,12 @@ function homepageReducer(state = initialState, action) {
           profile: action.data.profile,
         });
 
+      }
+    case action_types.SET_PROFILE_TYPE:
+      {
+        return Object.assign({ ...state }, {
+          profile_type: action.data,
+        });
       }
     default:
       {
@@ -26,4 +32,4 @@ function homepageReducer(state = initialState, action) {
 };
 
 
-export default homepageReducer;
+export default profilepageReducer;
