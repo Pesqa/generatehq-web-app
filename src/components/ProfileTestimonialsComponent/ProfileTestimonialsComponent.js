@@ -13,16 +13,16 @@ class ProfileTestimonialsComponent extends Component {
 
     return (
       <div className="testinomials-wrapper">
-        <div className="top-agent">
+        <div className="top-agent text-center">
           <img src={topAgent} className="top-agent-img" alt=""/>
         </div>
         <div className="container">
           <div className="row testinomials-row">
-            <div className="testinomials-header">
+            <div className="testinomials-header text-center">
               <h5 className="testinomials-sub-heading">I'm committed to making sure my client goals are achieved every time, whether it's a long term client or a referral from one of my happy customers.</h5>
-              <h1 className="testinomials-heading">What my clients say about working with me.</h1>
+              <h1 className="testinomials-heading font-weight-bold">What my clients say about working with me.</h1>
             </div>
-            <div className="testinomials">
+            <div className="testinomials w-100 d-flex flex-row justify-content-between">
               {
                 testimonials.slice(1, 5).map((testimonial, i) => {
                   return <Testinomial testimonial={testimonial} key={i}/>

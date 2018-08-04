@@ -65,7 +65,7 @@ class SellersAndBuyers extends Component {
     return(
       <div className="step-info">
         <div className="banner">
-          <ol className="carousel-indicators">
+          <ol className="carousel-indicators text-center position-relative">
               <li
                 onClick={() => this.onTabClick(0, 'seller')}
                 className={ profileType === 'seller' ? 'active' : ''}
@@ -80,17 +80,17 @@ class SellersAndBuyers extends Component {
               </li>
           </ol>
         </div>
-        <div className="step-info-inner-desktop">
-          <h2 className="headerTitle">{tabTitle.title}</h2>
-          <h5 className="subHeaderTitle">{tabTitle.subTitle}</h5>
-          <div className="stepContainer mb-5">
+        <div className="step-info-inner-desktop mt-5 flex-column align-items-center">
+          <h2 className="text-center font-weight-bold">{tabTitle.title}</h2>
+          <h5 className="subHeaderTitle text-center">{tabTitle.subTitle}</h5>
+          <div className="d-flex w-100 flex-row justify-content-center mb-5">
             <img src={profile.background_image} className="profile-img" alt=""/>
             <div className="stepContent">
               {
                 steps.map((step, i) => {
                   return(
                     <div key={i}>
-                      <h5 className="stepTitle">{step.step}</h5>
+                      <h5 className="font-weight-bold">{step.step}</h5>
                       <p>{step.description}</p>
                     </div>
                   );
@@ -101,12 +101,12 @@ class SellersAndBuyers extends Component {
           </div>
           <Button user_path={profile.user_path}/>
         </div>
-        <div className="step-info-inner-mobile">
-          <h5 className="subHeaderTitle">{tabTitle.subTitle}</h5>
+        <div className="step-info-inner-mobile mt-5 flex-column align-content-center">
+          <h5 className="subHeaderTitle text-center">{tabTitle.subTitle}</h5>
           <div>
             <StepCarousel steps={steps} tabTitle={tabTitle}/>
           </div>
-          <a href={`/${profile.user_path}`}>Meet {`${profile.first_name} ${profile.last_name}`}</a>
+          <a href={`/${profile.user_path}`} className="align-self-center mt-1">Meet {`${profile.first_name} ${profile.last_name}`}</a>
         </div>
       </div>
     )

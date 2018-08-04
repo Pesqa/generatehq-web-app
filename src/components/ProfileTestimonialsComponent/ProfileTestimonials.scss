@@ -7,29 +7,15 @@
 }
 
 .testinomials {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   margin: 20px 0 20px;
-  width: 100%;
 }
 
 .testinomials-header {
-  text-align: center;
   margin: 20px auto;
   max-width: 900px;
-
-  .testinomials-sub-heading {
-    text-align: center;
-  }
-
-  .testinomials-heading {
-    font-weight: bold;
-  }
 }
 
 .top-agent {
-  text-align: center;
   margin: -85px auto 0;
 }
 
@@ -41,7 +27,6 @@
 @media only screen and (max-width: 767px) {
   .testinomials {
     overflow-x: scroll;
-    width: 100%;
   }
   .testinomials {
     margin: 20px;
@@ -50,7 +35,6 @@
     font-size: 14px;
   }
   .testinomials-heading {
-    font-weight: bold;
     font-size: 24px;
   }
   .testinomials-header {
@@ -62,5 +46,11 @@
   .top-agent-img {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .testinomials {
+    overflow-x: scroll;
   }
 }
