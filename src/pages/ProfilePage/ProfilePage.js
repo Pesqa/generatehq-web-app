@@ -41,7 +41,7 @@ class ProfilePage extends Component {
       </div>;
     }
 
-    const { profile, testimonials } = this.props;
+    const { profile } = this.props;
 
     return (
       <div className="overflow-hidden absolute absolute-fill flex flex-column-md flex-column-sm">
@@ -56,9 +56,10 @@ class ProfilePage extends Component {
         <div className="flex-column">
           <ImageHeading />
         </div>
-        <SellersAndBuyersComponent />
-        {testimonials.length === 0 && <div style={{marginBottom: '50px'}} />}
-        {testimonials.length > 0 && <ProfileTestimonialsComponent />}
+        <div className="flex-column">
+          <SellersAndBuyersComponent />
+        </div>
+        <ProfileTestimonialsComponent />
         <div className="flex-column">
           <MapBoxComponent />
         </div>
@@ -74,8 +75,7 @@ class ProfilePage extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
-    facebook_reviews: state.profile.facebook_reviews,
-    testimonials: state.profile.testimonials,
+    facebook_reviews: state.profile.facebook_reviews
   };
 }
 

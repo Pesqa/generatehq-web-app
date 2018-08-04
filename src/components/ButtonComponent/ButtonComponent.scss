@@ -2,11 +2,11 @@
   border: 0 none;
   background: #ffa500;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 10px 50px;
+  padding: 8px 45px;
   border-radius: 7px;
 }
 
@@ -14,4 +14,10 @@
   background: #fff;
   color: #ffa500;
   border: 1px solid #ffa500;
+}
+
+@media (max-width: 767px) {
+  .btn.generate-button {
+    font-size: 14px;
+  }
 }

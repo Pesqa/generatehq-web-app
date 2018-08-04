@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import StepCarousel from '../StepCarouselComponent/StepCarouselComponent';
 import Button from '../ButtonComponent/ButtonComponent';
-import topAgent from './top-agent.png';
 import './index.css';
 
 import {
@@ -108,9 +107,6 @@ class SellersAndBuyers extends Component {
             <StepCarousel steps={steps} tabTitle={tabTitle}/>
           </div>
           <a href={`/${profile.user_path}`}>Meet {`${profile.first_name} ${profile.last_name}`}</a>
-        </div>
-        <div className="top-agent">
-          <img src={topAgent} className="top-agent-img" alt=""/>
         </div>
       </div>
     )

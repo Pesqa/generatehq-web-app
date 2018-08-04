@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import topAgent from './top-agent.png';
 
 import Testinomial from '../ProfileTestimonialComponent/ProfileTestimonialComponent';
 import Button from '../ButtonComponent/ButtonComponent';
@@ -12,6 +13,9 @@ class ProfileTestimonialsComponent extends Component {
 
     return (
       <div className="testinomials-wrapper">
+        <div className="top-agent">
+          <img src={topAgent} className="top-agent-img" alt=""/>
+        </div>
         <div className="container">
           <div className="row testinomials-row">
             <div className="testinomials-header">
@@ -25,7 +29,9 @@ class ProfileTestimonialsComponent extends Component {
                 })
               }
             </div>
-            <Button user_path={profile.user_path}/>
+            <div className="text-center w-100">
+              <Button user_path={profile.user_path}/>
+            </div>
           </div>
         </div>
       </div>
