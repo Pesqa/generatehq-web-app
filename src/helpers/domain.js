@@ -7,5 +7,5 @@ export const getDomain = () => {
     domain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
   }
 
-  return domain
+  return domain;
 }
