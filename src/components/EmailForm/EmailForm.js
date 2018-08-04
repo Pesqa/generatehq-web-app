@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import TextInput from '../TextInput/TextInput';
+import { getDomain } from '../../helpers/domain';
 
 import './EmailForm.css';
 
@@ -33,11 +33,10 @@ class SignupForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    var domainHash = parseDomain(window.location.href);
-    var fullDomain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
+    var fullDomain = getDomain();
     var userPath = window.location.pathname.split( '/' )[1];
 
-    axios.post(process.env.REACT_APP_API_HOST + '/api/v1/profiles/send_email', { domain: fullDomain, user_path: userPath, email: { from: this.state.email, message: this.state.message }  })
+    axios.post(process.env.REACT_APP_API_HOST + '/api/v1/profiles/send_email', { domain: getDomain(), user_path: userPath, email: { from: this.state.email, message: this.state.message }  })
     .then((response) => {
       if (response.status === 200) {
         // dispatch({

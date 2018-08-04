@@ -1,0 +1,78 @@
+.testinomial-by {
+  text-align: center;
+}
+.testinomial-container {
+  margin-right: 20px;
+}
+.testinomial-location {
+  font-size: 12px
+}
+
+.testinomial {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background: white;
+  border: 1px solid #ddd;
+  position: relative;
+  margin-bottom: 20px;
+  .first-heading, .grey-heading {
+    font-weight: bold;
+    margin-bottom: 0
+  }
+
+  p {
+    margin-bottom: 0
+  }
+
+  .grey-heading {
+    color: #a6a6a6
+  }
+}
+.testinomial:after, .testinomial:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.testinomial:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #ffffff;
+  border-width: 12px;
+  margin-left: -12px;
+}
+
+.testinomial:before {
+  border-color: rgba(179, 173, 161, 0);
+  border-top-color: #ddd;
+  border-width: 13px;
+  margin-left: -13px;
+}
+
+.testinomial-text {
+  font-size: 14px;
+  color: #a6a6a6;
+  text-align: center;
+  font-weight: bold;
+  width: 77%;
+  line-height: 18px;
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .testinomial-container {
+    display: inline-block;
+  }
+}

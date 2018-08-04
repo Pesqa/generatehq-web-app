@@ -1,11 +1,10 @@
 import axios from 'axios';
 import parseDomain from "../../node_modules_src/parse-domain/lib/parseDomain";
 import * as action_types from './constants';
+import { getDomain } from '../../helpers/domain';
 
 const userDomainParams = () => {
-
-  var domainHash = parseDomain(window.location.href);
-  var fullDomain = domainHash.subdomain + '.' + domainHash.domain + '.' + domainHash.tld;
+  var fullDomain = getDomain();
   var userPath = window.location.pathname.split( '/' )[1];
 
   return { domain: fullDomain, user_path: userPath  };

@@ -1,0 +1,222 @@
+.wrapper {
+  max-width: 1335px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: auto;
+  a {
+    display: inline-block;
+    margin: 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slide {
+  height: 70vh;
+  background-size: cover !important;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.9)));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.previousButton, .nextButton {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: url('http://svgshare.com/i/41_.svg') no-repeat center (center / 16px);
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.previousButton:hover, .nextButton:hover {
+  background: url('http://svgshare.com/i/41_.svg') no-repeat center (center / 16px);
+}
+
+.previousButton {
+  left: 0;
+  -webkit-transform: rotate(180deg) translateY(calc(50% + 0px));
+  transform: rotate(180deg) translateY(calc(50% + 0px));
+}
+
+.nextButton {
+  right: 0;
+}
+
+.slider-content {
+  text-align: center;
+  .inner {
+    padding: 0 70px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    button {
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+      background: #ffa500;
+      padding: 10px 30px;
+      border-radius: 7px;
+      border-width: 0;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-weight: 900;
+      margin: 0 auto;
+      color: #FFFFFF;
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-weight: 900;
+      margin: 0 auto;
+      max-width: 1000px;
+      color: #FFFFFF;
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+    p {
+      color: #FFFFFF;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 20px auto 30px;
+      max-width: 640px;
+    }
+  }
+  section {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    span {
+      color: #FFFFFF;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      display: inline-block;
+      text-align: left;
+      line-height: 1.4;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      border: solid 2px rgba(255, 255, 255, 0.5);
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+    span strong {
+      color: #FFFFFF;
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
+
+@media (max-height: 500px) {
+  .slider-wrapper, .slide {
+    height: calc(100vh - 75px);
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-wrapper, .slide {
+    height: calc(80vh - 75px);
+  }
+}
+
+@media (max-height: 600px) {
+  .slider-content .inner h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-content .inner h1 {
+    font-size: 32px;
+  }
+}
+
+.banner .carousel-indicators {
+  left: 0;
+  z-index: 15;
+  width: 500px;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center;
+  list-style: none;
+  right: 0;
+  box-shadow: 0px 0 5px #656565;
+  background: #fff;
+  height: 57px;
+  margin: 0 auto;
+  bottom: -28px;
+  li {
+    padding: 10px 30px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    text-indent: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: inherit;
+  }
+}
+
+.carousel-indicators {
+  .slide-link {
+    border: none;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+  li {
+    &.active {
+      border-bottom: 4px solid #ffa500;
+    }
+    &:hover {
+      color: #ffa500;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .banner .carousel-indicators {
+    width: 100%;
+    li {
+      line-height: 2;
+      padding: 10px 20px;
+    }
+  }
+  .carousel-indicators .slide-link {
+    font-size: 18px;
+  }
+}

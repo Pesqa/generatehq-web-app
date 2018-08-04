@@ -1,0 +1,49 @@
+.guide-desktop {
+  display: block;
+}
+
+.guide-mobile {
+  display: none;
+}
+
+.guide-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f5f9;
+  padding: 50px;
+}
+
+.guide-header-section {
+  margin-bottom: 20px;
+}
+
+.guide-header {
+  font-weight: bold;
+}
+
+.guide-box-section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.talk-view {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .guide-desktop {
+    display: none;
+  }
+
+  .guide-mobile {
+    display: block;
+  }
+
+  .guide-header {
+    font-size: 20px;
+  }
+}

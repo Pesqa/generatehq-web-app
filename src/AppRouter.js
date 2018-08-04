@@ -7,6 +7,7 @@ import {
 
 import HomePage from './pages/HomePage/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage/PrivacyPolicyPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 class AppRouter extends Component {
   render() {
@@ -23,6 +24,11 @@ class AppRouter extends Component {
               exact
               path={'/:user_path'}
               component={HomePage}
+            />
+            <Route
+              exact
+              path={'/landing/:user_path'}
+              component={ProfilePage}
             />
           </Switch>
         </div>

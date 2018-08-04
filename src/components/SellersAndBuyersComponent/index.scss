@@ -1,0 +1,159 @@
+.banner .carousel-indicators {
+  left: 0;
+  z-index: 15;
+  width: 500px;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center;
+  list-style: none;
+  right: 0;
+  box-shadow: 0px 0 1px #656565;
+  background: #fff;
+  height: 57px;
+  margin: -20px auto;
+  position: relative;
+  li {
+    padding: 10px 20px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    text-indent: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: inherit;
+  }
+}
+
+.carousel-indicators {
+  .slide-link {
+    border: none;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+  li {
+    &.active {
+      color: #ffa500;
+      border-bottom: 4px solid #ffa500;
+    }
+    &:hover {
+      color: #ffa500;
+    }
+  }
+}
+
+.step-info {
+  border-bottom: 10px solid #ffa500;
+}
+
+.step-info-inner-desktop {
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-info-inner-mobile {
+  display: none;
+}
+
+.headerTitle {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.subHeaderTitle {
+  text-align: center;
+  font-size: 18px;
+}
+
+.stepContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile-img {
+  height: 380px;
+  width: 272px;
+  padding-top: 25px;
+  margin-right: 50px;
+}
+
+.stepContent {
+  padding-top: 20px;
+  width: 40%;
+  min-width: 40%;
+}
+
+.stepTitle {
+  font-weight: bold;
+}
+
+.step-info-inner-desktop .book-button {
+  border: 0 none;
+  background: #ffa500;
+  color: #fff;
+  font-size: 24px;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 20px;
+  padding: 13px 30px;
+  border-radius: 7px;
+}
+
+.step-info-inner-desktop .book-button:hover {
+  background: #fff;
+  color: #ffa500;
+}
+
+.step-info-inner-mobile a {
+  align-self: center;
+}
+
+.top-agent {
+  padding-top: 100px;
+  text-align: center;
+  margin: -70px auto;
+}
+
+.top-agent-img {
+  width: 140px;
+  height: 140px;
+}
+
+@media (max-width: 767px) {
+  .banner .carousel-indicators {
+    width: 100%;
+    li {
+      line-height: 2;
+      text-align: center;
+      width: 166px;
+    }
+  }
+  .carousel-indicators .slide-link {
+    font-size: 18px;
+  }
+  .step-info-inner-mobile {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .step-info-inner-desktop {
+    display: none;
+  }
+  .top-agent {
+    margin: -50px auto;
+  }
+  .top-agent-img {
+    width: 100px;
+    height: 100px;
+  }
+}
