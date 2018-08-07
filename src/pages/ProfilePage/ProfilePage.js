@@ -14,7 +14,7 @@ import GuideComponent from '../../components/GuideComponent/GuideComponent';
 import LocationCopyComponent from '../../components/LocationCopyComponent/LocationCopyComponent';
 import CtaComponent from '../../components/CtaComponent/CtaComponent';
 import FooterComponent from '../../components/FooterComponent/FooterComponent';
-
+import ChatIcon from '../../components/ChatIconComponent/ChatIconComponent';
 import {
   initProfile
 } from '../../reducers/ProfilePageReducer/actions';
@@ -67,6 +67,9 @@ class ProfilePage extends Component {
         <LocationCopyComponent />
         <CtaComponent />
         <FooterComponent />
+        <div style={{ position: 'fixed', right: 0, bottom: 0, top: 0 }} >
+          <ChatIcon user_path={this.props.match.params.user_path}/>
+        </div>
       </div>
     );
   }
