@@ -10,15 +10,15 @@ class GuideComponent extends Component {
     const { profile } = this.props;
 
     return (
-      <div>
+      <div style={{cursor: 'pointer'}}>
         <div className="guide-desktop">
           <div className="guide-section">
             <div className="guide-header-section">
               <h2 className="guide-header">Your real estate questions answered</h2>
             </div>
             <div className="guide-box-section">
-              <GuideBox />
-              <GuideBox />
+              <GuideBox title="Buyers Guide" url="https://www.generatehq.com/buyers-guide/"/>
+              <GuideBox title="Sellers Guide" url="https://www.generatehq.com/sellers-guide/"/>
             </div>
             <Button user_path={profile.user_path} />
           </div>
