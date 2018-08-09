@@ -40,3 +40,12 @@ export const setProfileType = (type) => {
     });
   }
 }
+
+export const setChatBotVisibility = (isVisible) => {
+  return (dispatch) => {
+    dispatch({
+      type: action_types.SET_CHATBOT_VISIBILITY,
+      data: isVisible
+    });
+  }
+}

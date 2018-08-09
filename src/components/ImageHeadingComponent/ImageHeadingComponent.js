@@ -17,7 +17,6 @@ class ImageHeading extends Component {
     const content = {
       title: `${profile.first_name} ${profile.last_name}`,
       description: `Top ${profile.address} Realtor`,
-      button: 'Get in touch',
       image: 'https://rets-heroku.s3.amazonaws.com/tricities/guides/header_images/000/000/001/original/shutterstock_794061112.jpg?1525190721',
     };
 
@@ -28,7 +27,7 @@ class ImageHeading extends Component {
             {content.title}
           </h1>
           <p className="animated fadeInUp text-white agent-location">{content.description}</p>
-          <Button user_path={profile.user_path} title={content.button}/>
+          <Button user_path={profile.user_path} title={buttonTitle}/>
         </div>
       </div>
     )
@@ -36,7 +35,6 @@ class ImageHeading extends Component {
 }
 
 function stateToProps(state) {
-  console.log(state);
   return {
     profile: state.location.profile,
     profileType: state.location.profile_type

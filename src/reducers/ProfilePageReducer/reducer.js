@@ -8,6 +8,7 @@ const initialState = {
   facebook_reviews: [],
   testimonials: [],
   profile_type: 'seller',
+  chatBotVisible: false,
 };
 
 function profilepageReducer(state = initialState, action) {
@@ -25,6 +26,12 @@ function profilepageReducer(state = initialState, action) {
       {
         return Object.assign({ ...state }, {
           profile_type: action.data,
+        });
+      }
+    case action_types.SET_CHATBOT_VISIBILITY:
+      {
+        return Object.assign({ ...state }, {
+          chatBotVisible: action.data,
         });
       }
     default:

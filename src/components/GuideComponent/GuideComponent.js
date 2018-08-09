@@ -8,7 +8,6 @@ import './index.css';
 class GuideComponent extends Component {
   render() {
     const { profile, profileType } = this.props;
-    console.log('profileType', profileType);
     const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     return (
