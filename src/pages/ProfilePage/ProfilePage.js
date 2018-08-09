@@ -48,7 +48,7 @@ class ProfilePage extends Component {
         <div className="flex-column">
           <div className="d-flex flex-row-md flex-row-sm align-self-start w-100 header-wrapper">
             <span className="text d-none d-md-block">
-              {`Want to chat with Top ${profile.address} REALTOR® ${profile.first_name} ${profile.last_name}?`}
+              {`Want to chat with ${profile.address} REALTOR® ${profile.first_name} ${profile.last_name}?`}
             </span>
             <a className="flex" href={`${'tel:' + profile.phone_number}`} rel="noopener noreferrer" target="_blank">{`${profile.phone_number}`}</a>
           </div>
