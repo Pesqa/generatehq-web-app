@@ -21,12 +21,12 @@ class GuideComponent extends Component {
               <GuideBox
                 title="The Buying Experience"
                 url="https://www.generatehq.com/buyers-guide/"
-                background="https://s3.amazonaws.com/pesqa-prod/guides/buyers.jpg"
+                background="https://s3.amazonaws.com/pesqa-prod/guides/guide1.jpg"
               />
               <GuideBox
                 title="The Selling Experience"
                 url="https://www.generatehq.com/sellers-guide/"
-                background="https://s3.amazonaws.com/pesqa-prod/guides/sellers.jpg"
+                background="https://s3.amazonaws.com/pesqa-prod/guides/guide2.jpg"
               />
             </div>
             <Button user_path={profile.user_path} title={buttonTitle}/>

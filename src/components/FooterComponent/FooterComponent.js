@@ -13,7 +13,7 @@ class FooterComponent extends Component {
           <div className="footer-anchors">
             <div><a href="" className="footer-anchor">2018 Generatehq</a></div>
             <div><a href="" className="footer-anchor">Terms of use</a></div>
-            <div><a href="/privacy-policy" className="footer-anchor">Privecy policy</a></div>
+            <div><a href="/privacy-policy" className="footer-anchor">Privacy policy</a></div>
           </div>
           <img src={generateLogo} alt="" className="footer-logo"/>
         </div>
