@@ -43,18 +43,18 @@ class HomePage extends Component {
 
                 <div className="flex-row">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
                 <div className="flex-row lh-16">
-                  <div className={`agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold.length > 0)  ? '' : '-hidden')} -small `}>
+                  <div className={`agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold > 0)  ? '' : '-hidden')} -small `}>
                     <img src="/images/five-stars.png" />
-                    <div className="description">{`${this.props.profile.homes_sold}` }</div>
+                    <div className="description">{`${this.props.profile.homes_sold} sales last 12mo` }</div>
                   </div>
                 </div>
              </div>
 
              <br/>
 
-             <div className={`d-none d-md-block  agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold.length > 0)  ? '' : '-hidden')}`}>
+             <div className={`d-none d-md-block  agent-star-rating ${((this.props.profile.homes_sold !== undefined) && (this.props.profile.homes_sold > 0)  ? '' : '-hidden')}`}>
                 <img src="/images/five-stars.png" />
-                <div className="description">{`${this.props.profile.homes_sold}` }</div>
+                <div className="description">{`${this.props.profile.homes_sold} sales last 12mo` }</div>
              </div>
           </div>
 
