@@ -11,7 +11,8 @@ class ImageHeading extends Component {
   }
 
   render() {
-    const { profile } = this.props;
+    const { profile, profileType } = this.props;
+    const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     const content = {
       title: `${profile.first_name} ${profile.last_name}`,
@@ -35,8 +36,10 @@ class ImageHeading extends Component {
 }
 
 function stateToProps(state) {
+  console.log(state);
   return {
-    profile: state.profile.profile,
+    profile: state.location.profile,
+    profileType: state.location.profile_type
   };
 }
 

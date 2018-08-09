@@ -21,8 +21,8 @@ class CtaComponent extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
-    profileType: state.profilePage.profile_type
+    profile: state.location.profile,
+    profileType: state.location.profile_type
   };
 }
 

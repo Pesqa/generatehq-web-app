@@ -7,7 +7,9 @@ import './index.css';
 
 class GuideComponent extends Component {
   render() {
-    const { profile } = this.props;
+    const { profile, profileType } = this.props;
+    console.log('profileType', profileType);
+    const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     return (
       <div style={{cursor: 'pointer'}}>
@@ -20,7 +22,7 @@ class GuideComponent extends Component {
               <GuideBox title="Buyers Guide" url="https://www.generatehq.com/buyers-guide/"/>
               <GuideBox title="Sellers Guide" url="https://www.generatehq.com/sellers-guide/"/>
             </div>
-            <Button user_path={profile.user_path} />
+            <Button user_path={profile.user_path} title={buttonTitle}/>
           </div>
         </div>
         <div className="guide-mobile">
@@ -29,14 +31,14 @@ class GuideComponent extends Component {
               <h2 className="guide-header">Your questions answered</h2>
             </div>
             <div className="guide-box-section">
-              <GuideBox />
-              <GuideBox />
+              <GuideBox title="Buyers Guide" url="https://www.generatehq.com/buyers-guide/" />
+              <GuideBox title="Sellers Guide" url="https://www.generatehq.com/sellers-guide/" />
             </div>
             <div className="talk-view">
               <h6>Thinking about selling?</h6>
               <h6>let's talk</h6>
             </div>
-            <Button user_path={profile.user_path} />
+            <Button user_path={profile.user_path} title={buttonTitle}/>
           </div>
         </div>
       </div>
@@ -46,7 +48,8 @@ class GuideComponent extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
+    profile: state.location.profile,
+    profileType: state.location.profile_type
   };
 }
 

@@ -18,7 +18,7 @@ class ChatBotComponent extends React.Component {
   toggleChatBotIframe = () => {
     this.setState({
       isIframeVisible: !this.state.isIframeVisible
-    })
+    });
   }
 
   render() {

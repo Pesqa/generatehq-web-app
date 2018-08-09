@@ -5,6 +5,8 @@ const initialState = {
     first_name: '',
     last_name: '',
   },
+  facebook_reviews: [],
+  testimonials: [],
   profile_type: 'seller',
 };
 
@@ -14,6 +16,8 @@ function profilepageReducer(state = initialState, action) {
       {
         return Object.assign({ ...state }, {
           profile: action.data.profile,
+          facebook_reviews: action.data.facebook_reviews,
+          testimonials: action.data.testimonials
         });
 
       }

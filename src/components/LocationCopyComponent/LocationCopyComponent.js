@@ -25,7 +25,7 @@ class LocationCopyComponent extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
+    profile: state.location.profile,
   };
 }
 

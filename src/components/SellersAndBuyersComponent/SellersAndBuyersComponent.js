@@ -62,6 +62,8 @@ class SellersAndBuyers extends Component {
     const steps = profileType === 'seller' ? sellersStep : buyersStep;
     const tabTitle = profileType === 'seller' ? sellersTitle : buyersTitle;
 
+    const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
+
     return(
       <div className="step-info">
         <div className="banner">
@@ -99,7 +101,7 @@ class SellersAndBuyers extends Component {
               <a href={`/${profile.user_path}`}>Chat with {`${profile.first_name} ${profile.last_name}`}</a>
             </div>
           </div>
-          <Button user_path={profile.user_path}/>
+          <Button user_path={profile.user_path} title={buttonTitle}/>
         </div>
         <div className="step-info-inner-mobile mt-5 flex-column align-content-center">
           <h5 className="subHeaderTitle text-center">{tabTitle.subTitle}</h5>
@@ -115,8 +117,8 @@ class SellersAndBuyers extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
-    profileType: state.profilePage.profile_type
+    profile: state.location.profile,
+    profileType: state.location.profile_type
   };
 }
 

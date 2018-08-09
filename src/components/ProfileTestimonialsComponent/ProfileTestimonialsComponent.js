@@ -9,7 +9,8 @@ import './ProfileTestimonials.css';
 
 class ProfileTestimonialsComponent extends Component {
   render() {
-    const { profile, testimonials } = this.props;
+    const { profile, testimonials, profileType } = this.props;
+    const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     return (
       <div className="testinomials-wrapper">
@@ -30,7 +31,7 @@ class ProfileTestimonialsComponent extends Component {
               }
             </div>
             <div className="text-center w-100">
-              <Button user_path={profile.user_path}/>
+              <Button user_path={profile.user_path} title={buttonTitle}/>
             </div>
           </div>
         </div>
@@ -41,8 +42,9 @@ class ProfileTestimonialsComponent extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
-    testimonials: state.profile.testimonials,
+    profile: state.location.profile,
+    profileType: state.location.profile_type,
+    testimonials: state.location.testimonials,
   };
 }
 
