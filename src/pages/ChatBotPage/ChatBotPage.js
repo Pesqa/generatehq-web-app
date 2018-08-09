@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
-
+import { Dots } from 'react-activity';
 import Chatbot from '../../components/ChatbotComponent/ChatbotComponent';
-
-import './ChatBot.css';
 
 import {
   initProfile
 } from '../../reducers/HomepageReducer/actions';
 
+import 'react-activity/dist/react-activity.css';
+import './ChatBot.css';
 
 class HomePage extends Component {
+  state = {
+    loading: true
+  };
+
   componentDidUpdate() {
   }
 
@@ -21,7 +25,19 @@ class HomePage extends Component {
     this.props.initProfile();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile.user_path) {
+      this.setState({ loading: false });
+    }
+  }
+
   render() {
+    if (this.state.loading) {
+      return <div className="loading-container">
+        <Dots color="#fff" size={32} animating={true} />
+      </div>;
+    }
+
     return (
       <div className="overflow-hidden absolute absolute--fill flex flex-column-md flex-column-sm">
         <div className="flex-column">
