@@ -9,12 +9,15 @@ class GuideBox extends Component {
   }
 
   render() {
-    const { title, profile } = this.props;
+    const { title, profile, background } = this.props;
 
     return (
       <div onClick={this.handleClick}>
         <div className="box-desktop">
-          <div className="guide-box">
+          <div className="guide-box" style={{
+            backgroundImage: `url(${background})`,
+            backgroundSize: 'cover'
+          }}>
             <div className="box-title">
               <span>Realtors Guide</span>
             </div>
@@ -23,7 +26,10 @@ class GuideBox extends Component {
           </div>
         </div>
         <div className="box-mobile">
-          <div className="guide-box">
+          <div className="guide-box" style={{
+            backgroundImage: `url(${background})`,
+            backgroundSize: 'cover'
+          }}>
             <div className="box-title">
               <span>Realtors Guide</span>
             </div>

@@ -10,14 +10,27 @@
   position: relative;
   width: 450px;
   height: 280px;
-  background-color: #d9d8d9;
+  background-color: rgba(0, 0, 0, 0.2);
   margin: 20px;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.guide-box:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background: rgba(15, 14, 14, 0.49);
 }
 
 .box-title {
   display: flex;
+  z-index: 1;
   align-items: center;
   padding-left: 30px;
   background-color: #01b3ba;
@@ -30,13 +43,15 @@
 }
 
 .box-header {
-  color: black;
+  color: white;
+  z-index: 1;
   font-weight: bolder;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-left: 30px;
 }
 
 .box-footer {
+  z-index: 1;
   position: absolute;
   bottom: 0;
   color: white;
