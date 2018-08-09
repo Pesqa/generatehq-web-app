@@ -18,8 +18,8 @@ class GuideComponent extends Component {
               <h2 className="guide-header">Your real estate questions answered</h2>
             </div>
             <div className="guide-box-section">
-              <GuideBox title="Buyers Guide" url="https://www.generatehq.com/buyers-guide/"/>
-              <GuideBox title="Sellers Guide" url="https://www.generatehq.com/sellers-guide/"/>
+              <GuideBox title="The Buying Experience" url="https://www.generatehq.com/buyers-guide/"/>
+              <GuideBox title="The Selling Experience" url="https://www.generatehq.com/sellers-guide/"/>
             </div>
             <Button user_path={profile.user_path} title={buttonTitle}/>
           </div>
@@ -30,8 +30,8 @@ class GuideComponent extends Component {
               <h2 className="guide-header">Your questions answered</h2>
             </div>
             <div className="guide-box-section">
-              <GuideBox title="Buyers Guide" url="https://www.generatehq.com/buyers-guide/" />
-              <GuideBox title="Sellers Guide" url="https://www.generatehq.com/sellers-guide/" />
+              <GuideBox title="The Buying Experience" url="https://www.generatehq.com/buyers-guide/" />
+              <GuideBox title="The Selling Experience" url="https://www.generatehq.com/sellers-guide/" />
             </div>
             <div className="talk-view">
               <h6>Thinking about selling?</h6>

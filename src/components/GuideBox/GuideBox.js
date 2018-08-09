@@ -9,26 +9,26 @@ class GuideBox extends Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, profile } = this.props;
 
     return (
       <div onClick={this.handleClick}>
         <div className="box-desktop">
           <div className="guide-box">
             <div className="box-title">
-              <span>{title}</span>
+              <span>Realtors Guide</span>
             </div>
             <h5 className="box-header">{title}</h5>
-            <div className="box-footer">7 minute read</div>
+            <div className="box-footer">{profile.address}</div>
           </div>
         </div>
         <div className="box-mobile">
           <div className="guide-box">
             <div className="box-title">
-              <span>{title}</span>
+              <span>Realtors Guide</span>
             </div>
             <h5 className="box-header">{title}</h5>
-            <div className="box-footer">7 minute read</div>
+            <div className="box-footer">{profile.address}</div>
           </div>
         </div>
       </div>
