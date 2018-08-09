@@ -5,7 +5,8 @@ import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 import './MapBoxComponent.css';
 
 const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1IjoiYmVja3kxMDAxIiwiYSI6ImNqa2FseTdmMjBtZGUza21pZjYwd2twZ3cifQ.FweduppuI7E0n8BF8Sn9QA"
+  accessToken: "pk.eyJ1IjoiYmVja3kxMDAxIiwiYSI6ImNqa2FseTdmMjBtZGUza21pZjYwd2twZ3cifQ.FweduppuI7E0n8BF8Sn9QA",
+  scrollZoom: false
 });
 
 class MapBox extends Component {
