@@ -53,7 +53,7 @@ class Chatbot extends Component {
   render() {
     const questionType = ((this.props.questions !== undefined) && (this.props.questions.length > 0)  ? this.props.questions[this.props.questions.length - 1].content_type : '');
     const messageCount = ((this.props.messages !== undefined) && (this.props.messages.length > 0 && this.props.messages.length <= 3)  ? 'small' : '');
-    const minHeight = (this.state !== null && this.state.chatMinHeight !== null) ? (this.state.chatMinHeight + 'px') : 'auto';
+    const minHeight = (this.state !== null && this.state.chatMinHeight !== null) ? (this.state.chatMinHeight - 10  + 'px') : 'auto';
 
     return (
 

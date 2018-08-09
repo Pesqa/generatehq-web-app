@@ -13,6 +13,10 @@
   font-family: Brandon,Helvetica Neue,Helvetica,sans-serif;
 }
 
+.agent-name-text {
+  font-size: 24px;
+}
+
 .main-container{
   background-color: $white;
   white-space: pre-line;
@@ -124,10 +128,11 @@
 }
 
 .agent-image{
-  max-height: 100px;
+  max-height: 30px !important;
   min-width: 0px;
-  flex: 1 1 auto;
-  background-size: cover!important;
+  padding: 20px 10px;
+  background-size: cover !important;
+  min-height: 67px;
 
   .agent-name{
     font-size: 44px;
