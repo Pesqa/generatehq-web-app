@@ -32,7 +32,6 @@
 
 .fadeIn {
   animation-duration: .8s;
-  animation-delay: .5s;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
@@ -49,14 +48,12 @@
 
 .fadeInDown {
     animation-duration: .8s;
-    animation-delay: .5s;
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
 }
 
 .fadeInUp {
     animation-duration: .8s;
-    animation-delay: .5s;
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
