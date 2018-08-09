@@ -11,30 +11,30 @@ import {
 
 const sellersStep = [{
   step: 'Step 1 - Design a Marketing Plan',
-  description: 'Your home is unique. It demands its own marketing strategy. Based on your personal goals and the property you are selling, I will design a comprehensive marketing paln for your home.'
+  description: 'Your home is unique. It demands its own marketing strategy. Based on your personal goals and the property you are selling, I will design a personalized marketing plan for your home.'
 },{
   step: 'Step 2 - Prepare and List the Property',
-  description: 'I will prepare a listing for your home which will make you fall in love with your home all over again. This includes beautiful photos, advertising and listing pages.'
+  description: 'Selling your home for top dollar requires a lot more than great photos. I will create the highest quality marketing materials to make your home standout from the crowd.'
 },{
   step: 'Step 3 - Open House Events and Showings',
   description: 'Open house events and showings tailored specifically to your location, home style and potential buyers demographics. Designed to generate buzz and fear of loss.'
 },{
   step: 'Step 4 - Offers and Negotiation',
-  description: "As an experienced realtor, I'm happy to negotiate on your behalf. I'm dedicated and commited to getting you the very best price."
+  description: "As an experienced realtor, I will negotiate on your behalf. I'm dedicated and committed to getting you the very best price."
 }];
 
 const buyersStep = [{
   step: 'Step 1 - Buyers consultation',
-  description: "Let's meet for a no obligation consultation to discuss your goals for the purchase. I'll get to know youe needs and preference and answer any your questions."
+  description: "Let's meet for a no obligation consultation to discuss your goals for the purchase. I'll listen to your needs and preference and answer any of your questions."
 },{
   step: 'Step 2 - Showings',
-  description: "I will arrange amd accompany you on showings and open houses. I'll give you advice and support every step of the way."
+  description: "I will arrange and accompany you on viewings and open houses. I'll give you professional advice and support every step of the way."
 },{
   step: 'Step 3 - Negotiation',
   description: 'As an experienced realtor, I will negotiate on your behalf. My commitment is to get you the home at the best price.'
 },{
   step: 'Step 4 - After care',
-  description: 'Once your offer has been accepted, I will support you through the next steps, I make it my business to always be there.'
+  description: 'Once your offer has been accepted, I will support you through the purchase, I make it my business to always be there.'
 }];
 
 const sellersTitle = {
