@@ -24,10 +24,12 @@
 .close-chat {
   position: absolute;
   color: grey;
-  right: 33px;
+  right: 20px;
+  line-height: 35px;
   top: 12px;
   font-size: 30px;
   cursor: pointer;
+  padding: 0 10px;
 }
 
 .fadeInRight {

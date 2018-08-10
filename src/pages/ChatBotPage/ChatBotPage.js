@@ -46,7 +46,7 @@ class HomePage extends Component {
 
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
-          <div className="agent-image">
+          <div className="agent-image chat-bot-header">
             <div className="d-block d-sm-none flex-column m-0">
                 <div className="flex-row agent-name-text">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
              </div>
