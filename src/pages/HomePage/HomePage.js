@@ -39,7 +39,7 @@ class HomePage extends Component {
        <div className="flex flex-auto flex-row-md flex-column-sm overflow-y-auto">
 
           <div className="flex-md w-md-40 w-sm-100 d-flex align-items-end flex-row agent-image" style={ { background: `url(${this.props.profile.background_image}) no-repeat scroll top center`} }>
-            <div className="d-block d-sm-none agent-name flex-column">
+            <div className="d-block d-sm-none agent-name flex-column m-0">
 
                 <div className="flex-row">{`${this.props.profile.first_name} ${this.props.profile.last_name}` }</div>
                 <div className="flex-row lh-16">
