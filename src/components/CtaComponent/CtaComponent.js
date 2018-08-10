@@ -12,7 +12,7 @@ class CtaComponent extends Component {
     return (
       <div className="cta-section">
         <h2 className="cta-header">{`Thinking about ${headerTitle}?`}</h2>
-        <p className="cta-sub-header">Lets's chat</p>
+        <p className="cta-sub-header">Let's chat</p>
         <Button user_path={profile.user_path} title={buttonTitle}/>
       </div>
     );
