@@ -10,6 +10,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage/PrivacyPolicyPage';
 import ProfilePage from './pages/ProfilePage';
 import ChatBotPage from './pages/ChatBotPage';
 import BuyersGuidePage from './pages/BuyersGuidePage';
+import SellersGuidePage from './pages/SellersGuidePage';
 
 class AppRouter extends Component {
   render() {
@@ -36,6 +37,11 @@ class AppRouter extends Component {
               exact
               path={'/:agent_type/:state/:city/:area/buyers-guide'}
               component={BuyersGuidePage}
+            />
+            <Route
+              exact
+              path={'/:agent_type/:state/:city/:area/sellers-guide'}
+              component={SellersGuidePage}
             />
             <Route
               exact

@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,300,200italic,300italic,200,400italic,600,600italic,700,900italic,900,700italic);
+
+.absolute-fill {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.sellers-container {
+  background: transparent;
+  padding: 100px;
+  max-width: 740px !important;
+  p {
+    font-family: 'Source Sans Pro',sans-serif !important;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: justify;
+  }
+
+  .digit-heading {
+    font-family: serif !important;
+  }
+
+  .digit {
+    font-size: 130px;
+    line-height: 130px;
+    margin-bottom: -85px;
+    font-weight: bold;
+    font-family: serif !important;
+    color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.sellers-heading {
+  margin-bottom: 80px;
+}
