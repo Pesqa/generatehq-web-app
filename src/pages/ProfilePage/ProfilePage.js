@@ -31,7 +31,11 @@ class ProfilePage extends Component {
   }
 
   componentDidMount() {
-    this.props.initProfile(this.props.match.params.user_path);
+    console.log('main component');
+    const { params } = this.props.match;
+
+    const locationSlug = `${params.agent_type}/${params.state}/${params.city}/${params.area}`
+    this.props.initProfile(locationSlug);
   }
 
   render() {
@@ -68,7 +72,7 @@ class ProfilePage extends Component {
         <CtaComponent />
         <FooterComponent />
         <div style={{ position: 'fixed', right: 0, bottom: 0, top: 0 }} >
-          <ChatIcon user_path={this.props.match.params.user_path}/>
+          <ChatIcon user_path={this.props.profile.user_path}/>
         </div>
       </div>
     );
@@ -76,9 +80,10 @@ class ProfilePage extends Component {
 }
 
 function stateToProps(state) {
+  console.log(state);
   return {
-    profile: state.profile.profile,
-    facebook_reviews: state.profile.facebook_reviews
+    profile: state.location.profile,
+    location: state.location.location
   };
 }
 

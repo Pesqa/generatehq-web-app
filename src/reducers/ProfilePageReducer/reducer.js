@@ -16,6 +16,7 @@ function profilepageReducer(state = initialState, action) {
     case action_types.GET_ACCOUNT_INFO:
       {
         return Object.assign({ ...state }, {
+          location: action.data.location,
           profile: action.data.profile,
           facebook_reviews: action.data.facebook_reviews,
           testimonials: action.data.testimonials

@@ -11,12 +11,12 @@ class ImageHeading extends Component {
   }
 
   render() {
-    const { profile, profileType } = this.props;
+    const { profile, location, profileType } = this.props;
     const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     const content = {
       title: `${profile.first_name} ${profile.last_name}`,
-      description: `Top ${profile.address} Realtor`,
+      description: `Top ${location.area} Realtor`,
       image: 'https://rets-heroku.s3.amazonaws.com/tricities/guides/header_images/000/000/001/original/shutterstock_794061112.jpg?1525190721',
     };
 
@@ -37,6 +37,7 @@ class ImageHeading extends Component {
 function stateToProps(state) {
   return {
     profile: state.location.profile,
+    location: state.location.location,
     profileType: state.location.profile_type
   };
 }

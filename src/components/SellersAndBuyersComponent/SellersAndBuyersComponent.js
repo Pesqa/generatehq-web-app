@@ -118,6 +118,7 @@ class SellersAndBuyers extends Component {
 function stateToProps(state) {
   return {
     profile: state.location.profile,
+    location: state.location.location,
     profileType: state.location.profile_type
   };
 }

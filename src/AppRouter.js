@@ -28,7 +28,7 @@ class AppRouter extends Component {
             />
             <Route
               exact
-              path={'/landing/:user_path'}
+              path={'/:agent_type/:state/:city/:area'}
               component={ProfilePage}
             />
             <Route

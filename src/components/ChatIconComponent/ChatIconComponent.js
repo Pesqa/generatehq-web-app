@@ -22,6 +22,11 @@ class ChatIconComponent extends React.Component {
   }
 
   toggleChatBotIframe = () => {
+    this.setState({
+      iframeWidth: window.innerWidth < 420 ? window.innerWidth : 420,
+      iframeHeight: window.innerHeight
+    });
+
     this.props.setChatBotVisibility(!this.props.chatBotVisible);
   }
 

@@ -6,7 +6,7 @@ import './ProfileTestimonial.css';
 
 class ProfileTestimonialComponent extends Component {
   render() {
-    const { profile, testimonial } = this.props;
+    const { location, testimonial } = this.props;
 
     return (
       <div className="testinomial-container mr-3">
@@ -23,7 +23,7 @@ class ProfileTestimonialComponent extends Component {
         </div>
         <div className="text-center">
           <h6 className="font-weight-bold m-0">{testimonial.author}</h6>
-          <p className="testinomial-location">{profile.address}</p>
+          <p className="testinomial-location">{location.area}</p>
         </div>
       </div>
     );
@@ -33,6 +33,7 @@ class ProfileTestimonialComponent extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
+    location: state.location.location,
   };
 }
 

@@ -61,6 +61,7 @@ class MapBox extends Component {
 function stateToProps(state) {
   return {
     profile: state.profile.profile,
+    location: state.location.location,
   };
 }
 
