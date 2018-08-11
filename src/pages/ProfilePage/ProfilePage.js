@@ -45,7 +45,9 @@ class ProfilePage extends Component {
       </div>;
     }
 
-    const { profile, location } = this.props;
+    const { profile, location, match } = this.props;
+    const { params } = match;
+    const locationSlug = `/${params.agent_type}/${params.state}/${params.city}/${params.area}`
 
     return (
       <div className="overflow-hidden absolute absolute-fill flex flex-column-md flex-column-sm">
@@ -67,8 +69,7 @@ class ProfilePage extends Component {
         <div className="flex-column">
           <MapBoxComponent />
         </div>
-        <GuideComponent />
-        <LocationCopyComponent />
+        <GuideComponent locationSlug={locationSlug} /> <LocationCopyComponent />
         <CtaComponent />
         <FooterComponent />
         <div style={{ position: 'fixed', right: 0, bottom: 0, top: 0 }} >

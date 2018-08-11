@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
 import './index.css';
 
 class GuideBox extends Component {
   handleClick = () => {
     const { url } = this.props;
-    Object.assign(document.createElement('a'), { target: '_blank', href: url}).click();
+    console.log(url);
+    this.props.history.push(url);
+    // Object.assign(document.createElement('a'), { target: '_blank', href: url}).click();
   }
 
   render() {
@@ -48,4 +51,4 @@ function stateToProps(state) {
   };
 }
 
-export default connect(stateToProps, null)(GuideBox);
+export default connect(stateToProps, null)(withRouter(GuideBox));

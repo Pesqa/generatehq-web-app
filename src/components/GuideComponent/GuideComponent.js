@@ -7,7 +7,7 @@ import './index.css';
 
 class GuideComponent extends Component {
   render() {
-    const { profile, profileType } = this.props;
+    const { profile, profileType, locationSlug } = this.props;
     const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     return (
@@ -20,12 +20,12 @@ class GuideComponent extends Component {
             <div className="guide-box-section">
               <GuideBox
                 title="The Buying Experience"
-                url="https://www.generatehq.com/buyers-guide/"
+                url={locationSlug + '/buyers-guide'}
                 background="https://s3.amazonaws.com/pesqa-prod/guides/guide1.jpg"
               />
               <GuideBox
                 title="The Selling Experience"
-                url="https://www.generatehq.com/sellers-guide/"
+                url={locationSlug + '/sellers-guide'}
                 background="https://s3.amazonaws.com/pesqa-prod/guides/guide2.jpg"
               />
             </div>
@@ -40,12 +40,12 @@ class GuideComponent extends Component {
             <div className="guide-box-section">
               <GuideBox
                 title="The Buying Experience"
-                url="https://www.generatehq.com/buyers-guide/"
+                url={locationSlug + '/buyers-guide'}
                 background="https://s3.amazonaws.com/pesqa-prod/guides/buyers.jpg"
               />
               <GuideBox
                 title="The Selling Experience"
-                url="https://www.generatehq.com/sellers-guide/"
+                url={locationSlug + '/sellers-guide'}
                 background="https://s3.amazonaws.com/pesqa-prod/guides/sellers.jpg"
               />
             </div>

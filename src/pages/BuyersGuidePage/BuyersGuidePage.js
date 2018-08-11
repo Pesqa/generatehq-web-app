@@ -89,11 +89,11 @@ class BuyersGuidePage extends Component {
           <p className="mb-5">As a buyer in {location.area} you have an array of options when in comes to choosing a real estate agent to guide you through the buying process. So, why choose to work with me?</p>
           {buyersData.map((point, index) => {
             return (
-              <div className="flex flex-column text-center mt-4 mb-5">
+              <div key={index} className="flex flex-column text-center mt-4 mb-5">
                 <span className="digit">{index + 1}</span>
                 <h2 className="digit-heading mb-5">{point.heading && point.heading}</h2>
-                {point.paragraphs.map((paragraph) => {
-                  return <p>{paragraph}</p>
+                {point.paragraphs.map((paragraph, index) => {
+                  return <p key={index}>{paragraph}</p>
                 })}
               </div>
             )
