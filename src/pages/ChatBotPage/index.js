@@ -1,3 +1,3 @@
-import ChatBot from './ChatBot';
+import ChatBotPage from './ChatBotPage';
 
-export default ChatBot;
+export default ChatBotPage;

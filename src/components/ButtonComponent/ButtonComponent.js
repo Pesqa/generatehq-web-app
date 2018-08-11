@@ -9,15 +9,6 @@ import {
 } from '../../reducers/ProfilePageReducer/actions';
 
 class ButtonComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      iframeWidth: window.innerWidth < 420 ? window.innerWidth : 420,
-      iframeHeight: window.innerHeight,
-    }
-  }
-
   toggleChatBotIframe = () => {
     if (!this.props.chatBotVisible) {
       this.props.setChatBotVisibility(true);

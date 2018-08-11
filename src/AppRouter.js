@@ -7,8 +7,9 @@ import {
 
 import HomePage from './pages/HomePage/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage/PrivacyPolicyPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import ChatBotPage from './pages/ChatBotPage/ChatBotPage';
+import ProfilePage from './pages/ProfilePage';
+import ChatBotPage from './pages/ChatBotPage';
+import BuyersGuidePage from './pages/BuyersGuidePage';
 
 class AppRouter extends Component {
   render() {
@@ -30,6 +31,11 @@ class AppRouter extends Component {
               exact
               path={'/:agent_type/:state/:city/:area'}
               component={ProfilePage}
+            />
+            <Route
+              exact
+              path={'/:agent_type/:state/:city/:area/buyers-guide'}
+              component={BuyersGuidePage}
             />
             <Route
               exact
