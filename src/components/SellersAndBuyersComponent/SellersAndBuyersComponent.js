@@ -3,49 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import StepCarousel from '../StepCarouselComponent/StepCarouselComponent';
 import Button from '../ButtonComponent/ButtonComponent';
+import { capitalizeFirstLetter } from '../../helpers/string';
 import './index.css';
 
 import {
   setProfileType
 } from '../../reducers/ProfilePageReducer/actions';
 
-const sellersStep = [{
-  step: 'Step 1 - Design a Marketing Plan',
-  description: 'Your home is unique. It demands its own marketing strategy. Based on your personal goals and the property you are selling, I will design a personalized marketing plan for your home.'
-},{
-  step: 'Step 2 - Prepare and List the Property',
-  description: 'Selling your home for top dollar requires a lot more than great photos. I will create the highest quality marketing materials to make your home standout from the crowd.'
-},{
-  step: 'Step 3 - Open House Events and Showings',
-  description: 'Open house events and showings tailored specifically to your location, home style and potential buyers demographics. Designed to generate buzz and fear of loss.'
-},{
-  step: 'Step 4 - Offers and Negotiation',
-  description: "As an experienced realtor, I will negotiate on your behalf. I'm dedicated and committed to getting you the very best price."
-}];
-
-const buyersStep = [{
-  step: 'Step 1 - Buyers consultation',
-  description: "Let's meet for a no obligation consultation to discuss your goals for the purchase. I'll listen to your needs and preference and answer any of your questions."
-},{
-  step: 'Step 2 - Showings',
-  description: "I will arrange and accompany you on viewings and open houses. I'll give you professional advice and support every step of the way."
-},{
-  step: 'Step 3 - Negotiation',
-  description: 'As an experienced realtor, I will negotiate on your behalf. My commitment is to get you the home at the best price.'
-},{
-  step: 'Step 4 - After care',
-  description: 'Once your offer has been accepted, I will support you through the purchase, I make it my business to always be there.'
-}];
-
-const sellersTitle = {
-  title: 'There is a more being a top realtor than just putting up a sign',
-  subTitle: "I'm here to help you design a comprehensive marketing plan to sell your home for the highest price possible",
-}
-
-const buyersTitle = {
-  title: 'There is more to being a top realtor than just showing homes',
-  subTitle: "I'm here to help you find your next home for the best price possible."
-}
 
 class SellersAndBuyers extends Component {
   static defaultProps = {
@@ -56,11 +20,60 @@ class SellersAndBuyers extends Component {
     this.props.setProfileType(type)
   }
 
-  render() {
-    const { profile, profileType } = this.props;
+  prepareData() {
+    const { profileType } = this.props;
 
-    const steps = profileType === 'seller' ? sellersStep : buyersStep;
-    const tabTitle = profileType === 'seller' ? sellersTitle : buyersTitle;
+    const sellersStep = [{
+      step: 'Step 1 - Design a Marketing Plan',
+      description: 'Your home is unique. It demands its own marketing strategy. Based on your personal goals and the property you are selling, I will design a personalized marketing plan for your home.'
+    },{
+      step: 'Step 2 - Prepare and List the Property',
+      description: 'Selling your home for top dollar requires a lot more than great photos. I will create the highest quality marketing materials to make your home standout from the crowd.'
+    },{
+      step: 'Step 3 - Open House Events and Showings',
+      description: 'Open house events and showings tailored specifically to your location, home style and potential buyers demographics. Designed to generate buzz and fear of loss.'
+    },{
+      step: 'Step 4 - Offers and Negotiation',
+      description: "As an experienced realtor, I will negotiate on your behalf. I'm dedicated and committed to getting you the very best price."
+    }];
+
+    const buyersStep = [{
+      step: 'Step 1 - Buyers consultation',
+      description: "Let's meet for a no obligation consultation to discuss your goals for the purchase. I'll listen to your needs and preference and answer any of your questions."
+    },{
+      step: 'Step 2 - Showings',
+      description: "I will arrange and accompany you on viewings and open houses. I'll give you professional advice and support every step of the way."
+    },{
+      step: 'Step 3 - Negotiation',
+      description: 'As an experienced realtor, I will negotiate on your behalf. My commitment is to get you the home at the best price.'
+    },{
+      step: 'Step 4 - After care',
+      description: 'Once your offer has been accepted, I will support you through the purchase, I make it my business to always be there.'
+    }];
+
+    return profileType === 'seller' ? sellersStep : buyersStep
+  }
+
+  prepareTitle() {
+    const { agentType, location, profileType } = this.props;
+    const sellersTitle = {
+      title: `There is more to being a top ${location.area} ${agentType} than just putting up a sign`,
+      subTitle: "I'm here to help you design a comprehensive marketing plan to sell your home for the highest price possible",
+    }
+
+    const buyersTitle = {
+      title: `There is more tobeing a top ${location.area} ${agentType} than just showing homes`,
+      subTitle: "I'm here to help you find your next home for the best price possible."
+    }
+
+    return profileType === 'seller' ? sellersTitle : buyersTitle;
+  }
+
+  render() {
+    const { location, agentType, profile, profileType } = this.props;
+
+    const steps = this.prepareData();
+    const tabTitle = this.prepareTitle();
 
     const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
@@ -86,7 +99,7 @@ class SellersAndBuyers extends Component {
           <h2 className="text-center font-weight-bold">{tabTitle.title}</h2>
           <h5 className="subHeaderTitle text-center">{tabTitle.subTitle}</h5>
           <div className="d-flex w-100 flex-row justify-content-center mb-5">
-            <img src={profile.background_image} className="profile-img" alt=""/>
+            <img src={profile.background_image} className="profile-img" alt={`${location.area} ${agentType}`} />
             <div className="stepContent">
               {
                 steps.map((step, i) => {
@@ -119,7 +132,8 @@ function stateToProps(state) {
   return {
     profile: state.location.profile,
     location: state.location.location,
-    profileType: state.location.profile_type
+    profileType: state.location.profile_type,
+    agentType: state.location.agentType
   };
 }
 

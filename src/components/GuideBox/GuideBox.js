@@ -6,13 +6,11 @@ import './index.css';
 class GuideBox extends Component {
   handleClick = () => {
     const { url } = this.props;
-    console.log(url);
     this.props.history.push(url);
-    // Object.assign(document.createElement('a'), { target: '_blank', href: url}).click();
   }
 
   render() {
-    const { title, profile, background } = this.props;
+    const { title, profile, background, location, agentType } = this.props;
 
     return (
       <div onClick={this.handleClick}>
@@ -22,10 +20,10 @@ class GuideBox extends Component {
             backgroundSize: 'cover'
           }}>
             <div className="box-title">
-              <span>Realtors Guide</span>
+              <h5>{agentType}s Guide</h5>
             </div>
             <h5 className="box-header">{title}</h5>
-            <div className="box-footer">{profile.address}</div>
+            <h5 className="box-footer">{location.area}</h5>
           </div>
         </div>
         <div className="box-mobile">
@@ -34,10 +32,10 @@ class GuideBox extends Component {
             backgroundSize: 'cover'
           }}>
             <div className="box-title">
-              <span>Realtors Guide</span>
+              <h5>{agentType}s Guide</h5>
             </div>
             <h5 className="box-header">{title}</h5>
-            <div className="box-footer">{profile.address}</div>
+            <div className="box-footer">{location.area}</div>
           </div>
         </div>
       </div>
@@ -47,7 +45,9 @@ class GuideBox extends Component {
 
 function stateToProps(state) {
   return {
-    profile: state.profile.profile,
+    profile: state.location.profile,
+    location: state.location.location,
+    agentType: state.location.agentType,
   };
 }
 

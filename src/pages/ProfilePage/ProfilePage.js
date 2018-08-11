@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Dots } from 'react-activity';
+import MetaTags from 'react-meta-tags';
 
 import 'react-activity/dist/react-activity.css';
 import './ProfilePage.css';
@@ -15,6 +16,9 @@ import LocationCopyComponent from '../../components/LocationCopyComponent/Locati
 import CtaComponent from '../../components/CtaComponent/CtaComponent';
 import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import ChatIcon from '../../components/ChatIconComponent/ChatIconComponent';
+
+import { capitalizeFirstLetter } from '../../helpers/string';
+
 import {
   initProfile
 } from '../../reducers/ProfilePageReducer/actions';
@@ -35,7 +39,7 @@ class ProfilePage extends Component {
     const { params } = this.props.match;
 
     const locationSlug = `${params.agent_type}/${params.state}/${params.city}/${params.area}`
-    this.props.initProfile(locationSlug);
+    this.props.initProfile(locationSlug, params.agent_type);
   }
 
   render() {
@@ -45,16 +49,20 @@ class ProfilePage extends Component {
       </div>;
     }
 
-    const { profile, location, match } = this.props;
+    const { profile, location, match, agentType } = this.props;
     const { params } = match;
     const locationSlug = `/${params.agent_type}/${params.state}/${params.city}/${params.area}`
 
     return (
       <div className="overflow-hidden absolute absolute-fill flex flex-column-md flex-column-sm">
+        <MetaTags>
+          <title>{capitalizeFirstLetter(agentType)} {location.area}</title>
+          <meta name="description" content={`Are you looking for a ${agentType} in ${location.area}? I am a 5 star rated ${agentType} based in ${location.area}. I canhelp you buy or sell your home.`}/>
+        </MetaTags>
         <div className="flex-column">
           <div className="d-flex flex-row-md flex-row-sm align-self-start w-100 header-wrapper">
             <span className="text d-none d-md-block">
-              {`Want to chat with ${location.area} REALTOR® ${profile.first_name} ${profile.last_name}?`}
+              {`Want to chat with ${location.area} ${agentType} ${profile.first_name} ${profile.last_name}?`}
             </span>
             <a className="flex" href={`${'tel:' + profile.phone_number}`} rel="noopener noreferrer" target="_blank">{`${profile.phone_number}`}</a>
           </div>
@@ -69,7 +77,8 @@ class ProfilePage extends Component {
         <div className="flex-column">
           <MapBoxComponent />
         </div>
-        <GuideComponent locationSlug={locationSlug} /> <LocationCopyComponent />
+        <GuideComponent locationSlug={locationSlug} />
+        <LocationCopyComponent />
         <CtaComponent />
         <FooterComponent />
         <div style={{ position: 'fixed', right: 0, bottom: 0, top: 0 }} >
@@ -81,10 +90,10 @@ class ProfilePage extends Component {
 }
 
 function stateToProps(state) {
-  console.log(state);
   return {
     profile: state.location.profile,
-    location: state.location.location
+    location: state.location.location,
+    agentType: state.location.agentType
   };
 }
 

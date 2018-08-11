@@ -30,13 +30,13 @@ class MapBox extends Component {
   }
 
   render() {
-    const { profile } = this.props;
+    const { profile, location } = this.props;
     const width = this.state.width > 560 ? '80vw' : '95vw';
     const height = this.state.width > 560 ? '80vh' : '30vh';
 
     return (
       <section className="d-flex flex-column justify-content-center align-items-center map-container">
-        <h2 className="heading text-center">I have sold {profile.homes_sold || 0} properties in {profile.address} in the last 12 months</h2>
+        <h3 className="heading text-center">I have sold {profile.homes_sold || 0} properties in {location.area} in the last 12 months</h3>
         <h6 className="light-text text-center mb-4">Contact me today and we will soon be adding your home to the map</h6>
         <div>
           <Map

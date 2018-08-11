@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as action_types from './constants';
 import { getDomain } from '../../helpers/domain';
 
-export const initProfile = (locationSlug) => {
+export const initProfile = (locationSlug, agentType) => {
 
   return (dispatch) => {
     return axios.post(
@@ -20,7 +20,8 @@ export const initProfile = (locationSlug) => {
 
           dispatch({
             type: action_types.GET_ACCOUNT_INFO,
-            data: response.data
+            data: response.data,
+            agentType: agentType
           });
 
           return response;

@@ -35,11 +35,16 @@
   padding-left: 30px;
   background-color: #01b3ba;
   height: 30px;
-  width: 250px;
+  width: 300px;
   margin-top: 20px;
   color: white;
   font-size: 14px;
   font-weight: bold;
+  text-transform: uppercase;
+  h5 {
+    margin-bottom: 0;
+    font-size: 15px;
+  }
 }
 
 .box-header {
@@ -87,6 +92,10 @@
     font-weight: bold;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+    h5 {
+      margin-bottom: 0;
+      font-size: 6px;
+    }
   }
 
   .box-header {

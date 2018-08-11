@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../ButtonComponent/ButtonComponent';
-
+import { toTitleCase } from '../../helpers/string';
 import './ImageHeadingComponent.css';
 
 class ImageHeading extends Component {
@@ -11,12 +11,12 @@ class ImageHeading extends Component {
   }
 
   render() {
-    const { profile, location, profileType } = this.props;
+    const { profile, location, profileType, agentType } = this.props;
     const buttonTitle = profileType === 'seller' ? 'SELL MY HOME' : 'BUY A HOME';
 
     const content = {
       title: `${profile.first_name} ${profile.last_name}`,
-      description: `Top ${location.area} Realtor`,
+      description: `Top ${location.area} ${toTitleCase(agentType)}`,
       image: 'https://rets-heroku.s3.amazonaws.com/tricities/guides/header_images/000/000/001/original/shutterstock_794061112.jpg?1525190721',
     };
 
@@ -38,7 +38,8 @@ function stateToProps(state) {
   return {
     profile: state.location.profile,
     location: state.location.location,
-    profileType: state.location.profile_type
+    profileType: state.location.profile_type,
+    agentType: state.location.agentType
   };
 }
 

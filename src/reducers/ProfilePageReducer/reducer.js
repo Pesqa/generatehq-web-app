@@ -1,5 +1,11 @@
 import * as action_types from './constants';
 
+const agentTypeMap = {
+  'realtor': 'realtor',
+  'real-estate-agent': 'real estate agent',
+  'estate-agent': 'estate agent'
+};
+
 const initialState = {
   profile: {
     first_name: '',
@@ -19,7 +25,8 @@ function profilepageReducer(state = initialState, action) {
           location: action.data.location,
           profile: action.data.profile,
           facebook_reviews: action.data.facebook_reviews,
-          testimonials: action.data.testimonials
+          testimonials: action.data.testimonials,
+          agentType: agentTypeMap[action.agentType]
         });
 
       }
