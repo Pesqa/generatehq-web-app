@@ -48,7 +48,7 @@ class BuyersGuidePage extends Component {
     }, {
       heading: 'Personal service from the start',
       paragraphs: [
-        `There’s a horrible culture of cold calls and unsolicited emails within the real estate world - but that’s just not us. Working with ${profile.first_name} ${profile.last_name} means you can expect relevant, transparent communication: always from one of our experts, and only when you need it.`,
+        `There’s a horrible culture of cold calls and unsolicited emails within the real estate world - but that’s just not us. Working with me means you can expect relevant, transparent communication: always from one of our experts, and only when you need it.`,
         "There are client testimonials all over my site, and I take pride in my ability to deliver on my promises. I didn’t gain our experience overnight, and all of the skills, insights, and experience I’ve gained across our careers is entirely at your disposal.",
         "Our property alerts only chime for relevant, high-yield opportunities, and if you ever have a question, we’re only ever a call away.",
         "Ready to learn more? Let’s grab a coffee and discuss your needs. In just 30 minutes, we will:",
