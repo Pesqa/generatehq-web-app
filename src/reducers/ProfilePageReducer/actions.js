@@ -30,7 +30,6 @@ export const initProfile = (locationSlug, agentType) => {
         throw response;
       })
       .catch((error) => {
-        console.log('error: ', error);
         dispatch({
           type: action_types.GET_ACCOUNT_ERROR,
           error: error

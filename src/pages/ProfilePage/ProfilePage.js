@@ -35,7 +35,6 @@ class ProfilePage extends Component {
   }
 
   componentDidMount() {
-    console.log('main component');
     const { params } = this.props.match;
 
     const locationSlug = `${params.agent_type}/${params.state}/${params.city}/${params.area}`

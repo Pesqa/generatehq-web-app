@@ -14,7 +14,7 @@ class LocationCopyComponent extends Component {
           </div>
           <div>
             <p>
-              {profile.bio}
+              {location.content}
             </p>
           </div>
         </div>
