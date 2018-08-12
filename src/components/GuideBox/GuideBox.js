@@ -10,8 +10,7 @@ class GuideBox extends Component {
   }
 
   render() {
-    const { title, profile, background, location, agentType } = this.props;
-
+    const { title, profile, background, locationData, agentType } = this.props;
     return (
       <div onClick={this.handleClick}>
         <div className="box-desktop">
@@ -23,7 +22,7 @@ class GuideBox extends Component {
               <h5>{agentType}s Guide</h5>
             </div>
             <h5 className="box-header">{title}</h5>
-            <h5 className="box-footer">{location.area}</h5>
+            <h5 className="box-footer">{locationData.area}</h5>
           </div>
         </div>
         <div className="box-mobile">
@@ -35,7 +34,7 @@ class GuideBox extends Component {
               <h5>{agentType}s Guide</h5>
             </div>
             <h5 className="box-header">{title}</h5>
-            <div className="box-footer">{location.area}</div>
+            <div className="box-footer">{locationData.area}</div>
           </div>
         </div>
       </div>
@@ -46,7 +45,7 @@ class GuideBox extends Component {
 function stateToProps(state) {
   return {
     profile: state.location.profile,
-    location: state.location.location,
+    locationData: state.location.location,
     agentType: state.location.agentType,
   };
 }

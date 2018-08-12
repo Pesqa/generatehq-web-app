@@ -12,8 +12,8 @@ class ProfileTestimonialComponent extends Component {
       <div className="testinomial-container mr-3">
         <div className="testinomial position-relative d-flex flex-column align-items-center justify-content-center mb-4 bg-white border">
           <img src="https://greenmonkeymarketing.com/wp-content/uploads/2017/05/Screen-Shot-2017-05-09-at-5.20.54-PM-300x297.png" width="70" height="70" alt=""/>
-          <h6 className="font-weight-bold mb-0">{testimonial.author}</h6>
-          <h6 className="text-black-50 font-weight-bold mb-0">{testimonial.additional_info}</h6>
+          <h4 className="font-weight-bold mb-0">{testimonial.author}</h4>
+          <h4 className="text-black-50 font-weight-bold mb-0">{testimonial.additional_info}</h4>
           <StarRatingComponent
             name="rating"
             starCount={testimonial.star_count}
@@ -23,7 +23,7 @@ class ProfileTestimonialComponent extends Component {
         </div>
         <div className="text-center">
           <h6 className="font-weight-bold m-0">{testimonial.author}</h6>
-          <p className="testinomial-location">{location.area}</p>
+          <h4 className="testinomial-location">{location.area}</h4>
         </div>
       </div>
     );
