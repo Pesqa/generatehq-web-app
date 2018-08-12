@@ -11,12 +11,12 @@
 }
 
 .chatbot-container {
+  background: black;
   z-index: 2147483647;
   position: fixed;
   top: 0;
   right: 0;
   border: none;
-  background: #fff;
   border-left: 1px solid rgba(0,0,0,.13);
   overflow: hidden;
 }
