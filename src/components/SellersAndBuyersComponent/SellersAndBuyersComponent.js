@@ -62,7 +62,7 @@ class SellersAndBuyers extends Component {
     }
 
     const buyersTitle = {
-      title: `There is more tobeing a top ${location.area} ${agentType} than just showing homes`,
+      title: `There is more to being a top ${location.area} ${agentType} than just showing homes`,
       subTitle: "I'm here to help you find your next home for the best price possible."
     }
 
