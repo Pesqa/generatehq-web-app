@@ -17,7 +17,7 @@ class ImageHeading extends Component {
     const content = {
       title: `${profile.first_name} ${profile.last_name}`,
       description: `Top ${location.area} ${toTitleCase(agentType)}`,
-      image: 'https://rets-heroku.s3.amazonaws.com/tricities/guides/header_images/000/000/001/original/shutterstock_794061112.jpg?1525190721',
+      image: location.header_image_url,
     };
 
     return (
