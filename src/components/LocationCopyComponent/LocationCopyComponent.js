@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactMarkdown from 'react-markdown';
+
 import './index.css';
 
 class LocationCopyComponent extends Component {
@@ -13,9 +15,9 @@ class LocationCopyComponent extends Component {
             <h3 className="location-header-text">{`${profile.first_name} ${profile.last_name} is your top ${agentType} in ${location.area}`}</h3>
           </div>
           <div>
-            <p>
+            <ReactMarkdown skipHtml={false} escapeHtml={false}>
               {location.content}
-            </p>
+            </ReactMarkdown>
           </div>
         </div>
       </div>
