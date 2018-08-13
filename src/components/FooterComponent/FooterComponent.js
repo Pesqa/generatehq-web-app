@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import generateLogo from './generate-logo.png';
+import { toTitleCase } from '../../helpers/string';
 import './index.css';
 
 class FooterComponent extends Component {
@@ -11,11 +12,10 @@ class FooterComponent extends Component {
         <div className="footer-text">{profile.footer_text}</div>
         <div className="footer-menu">
           <div className="footer-anchors">
-            <div><a href="" className="footer-anchor">2018 Generatehq</a></div>
-            <div><a href={`/${profile.user_path}`} className="footer-anchor">{location.area} {agentType}</a></div>
+            <div><a href="https://www.generatehq.com/" target="_blank" className="footer-anchor">2018 Generatehq</a></div>
             <div><a href="/privacy-policy" className="footer-anchor">Privacy policy</a></div>
+            <div><a href={`/${profile.user_path}`} className="footer-anchor">{location.area} {toTitleCase(agentType)}</a></div>
           </div>
-          <img src={generateLogo} alt="" className="footer-logo"/>
         </div>
       </div>
     );

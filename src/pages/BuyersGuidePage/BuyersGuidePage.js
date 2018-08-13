@@ -52,6 +52,8 @@ class BuyersGuidePage extends Component {
         "There are client testimonials all over my site, and I take pride in my ability to deliver on my promises. I didn’t gain our experience overnight, and all of the skills, insights, and experience I’ve gained across our careers is entirely at your disposal.",
         "Our property alerts only chime for relevant, high-yield opportunities, and if you ever have a question, we’re only ever a call away.",
         "Ready to learn more? Let’s grab a coffee and discuss your needs. In just 30 minutes, we will:",
+      ],
+      li: [
         "Provide you with a complimentary buyers consultation",
         "Discuss your preferences and requirements",
         "Leave you with references and testimonials that validate our track record"
@@ -94,6 +96,9 @@ class BuyersGuidePage extends Component {
                 {point.paragraphs.map((paragraph, index) => {
                   return <p key={index}>{paragraph}</p>
                 })}
+                {point.li && <ul>{point.li.map((paragraph, index) => {
+                  return <li key={index} class="text-left">{paragraph}</li>
+                })}</ul>}
               </div>
             )
           })}

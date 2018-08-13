@@ -60,10 +60,11 @@ class SellersGuidePage extends Component {
       heading: 'Continuous innovation',
       paragraphs: [
         'In order to offer all of our customers the full VIP treatment, we invest continually in emerging technologies, training, and developing tailored marketing strategies. From advertising campaigns to jaw-dropping property listings, our innovation means your home stands out from the crowd.',
-        'Ready to learn more? Let’s grab a coffee and discuss your needs. In just 30 minutes, we will:',
-        'Provide you with a complimentary evaluation for your property',
-        'Summarize our unique sales and marketing strategy',
-        'Leave you with references and testimonials that validate our track record'
+        'Ready to learn more? Let’s grab a coffee and discuss your needs. In just 30 minutes, we will:'      ],
+      li: [
+        "Provide you with a complimentary buyers consultation",
+        "Discuss your preferences and requirements",
+        "Leave you with references and testimonials that validate our track record"
       ]
     }];
   };
@@ -103,6 +104,9 @@ class SellersGuidePage extends Component {
                 {point.paragraphs.map((paragraph) => {
                   return <p>{paragraph}</p>
                 })}
+                {point.li && <ul>{point.li.map((paragraph, index) => {
+                  return <li key={index} class="text-left">{paragraph}</li>
+                })}</ul>}
               </div>
             )
           })}
