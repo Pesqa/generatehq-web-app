@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import StepCarousel from '../StepCarouselComponent/StepCarouselComponent';
 import Button from '../ButtonComponent/ButtonComponent';
-import { capitalizeFirstLetter } from '../../helpers/string';
 import './index.css';
 
 import {
