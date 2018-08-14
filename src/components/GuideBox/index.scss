@@ -30,7 +30,7 @@
 
 .box-title {
   display: flex;
-  z-index: 1;
+  z-index: 0;
   align-items: center;
   padding-left: 30px;
   background-color: #01b3ba;
@@ -49,14 +49,14 @@
 
 .box-header {
   color: white;
-  z-index: 1;
+  z-index: 0;
   font-weight: bolder;
   padding-top: 15px;
   padding-left: 30px;
 }
 
 .box-footer {
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   bottom: 0;
   color: white;
