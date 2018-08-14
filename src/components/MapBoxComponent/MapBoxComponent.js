@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 
 import './MapBoxComponent.css';
-
-const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1IjoiYmVja3kxMDAxIiwiYSI6ImNqa2FseTdmMjBtZGUza21pZjYwd2twZ3cifQ.FweduppuI7E0n8BF8Sn9QA",
-  scrollZoom: false
-});
 
 class MapBox extends Component {
   constructor(props) {
@@ -38,21 +32,9 @@ class MapBox extends Component {
       <section className="d-flex flex-column justify-content-center align-items-center map-container">
         <h3 className="heading text-center">I have bought & sold {profile.homes_sold || 0} properties in {location.area} in the last 12 months</h3>
         <h6 className="light-text text-center mb-4">Contact me today and we will soon be adding your home to the map</h6>
-        <div>
-          <Map
-            style="mapbox://styles/mapbox/light-v9"
-            containerStyle={{
-              width: width,
-              height: height,
-            }}>
-              <Layer
-                type="symbol"
-                id="marker"
-                layout={{ "icon-image": "marker-15" }}>
-                <Feature coordinates={[-0.481747846041145, 51.3233379650232]}/>
-              </Layer>
-          </Map>
-        </div>
+        <body style={{marginBottom: 50, padding:0, overflow:'hidden', height: height, width: width}}>
+            <iframe src={profile.map_code} frameborder="0" style={{overflow:'hidden', height:'100%', width: '100%'}} height="100%" width="100%"></iframe>
+        </body>
       </section>
     );
   }
