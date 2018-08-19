@@ -56,7 +56,7 @@ class ProfilePage extends Component {
       <div className="overflow-hidden absolute absolute-fill flex flex-column-md flex-column-sm">
         <MetaTags>
           <title>{capitalizeFirstLetter(agentType)} {location.area}</title>
-          <meta name="description" content={`Are you looking for a ${agentType} in ${location.area}? I am a 5 star rated ${agentType} based in ${location.area}. I canhelp you buy or sell your home.`}/>
+          <meta name="description" content={`Are you looking for a ${agentType} in ${location.area}? I am a 5 star rated ${agentType} based in ${location.area}. I can help you buy or sell your home.`}/>
         </MetaTags>
         <div className="flex-column">
           <div className="d-flex flex-row-md flex-row-sm align-self-start w-100 header-wrapper">
