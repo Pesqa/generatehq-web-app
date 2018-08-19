@@ -30,7 +30,7 @@ class MapBox extends Component {
 
     return (
       <section className="d-flex flex-column justify-content-center align-items-center map-container">
-        <h3 className="heading text-center">I have bought & sold {profile.homes_sold || 0} properties in {location.area} in the last 12 months</h3>
+        <h3 className="heading text-center">I have completed {profile.homes_sold || 0} sales in your area in the past 12 months</h3>
         <h6 className="light-text text-center mb-4">Contact me today and we will soon be adding your home to the map</h6>
         <body style={{marginBottom: 50, padding:0, overflow:'hidden', height: height, width: width}}>
             <iframe src={profile.map_code} frameborder="0" style={{overflow:'hidden', height:'100%', width: '100%'}} height="100%" width="100%"></iframe>
