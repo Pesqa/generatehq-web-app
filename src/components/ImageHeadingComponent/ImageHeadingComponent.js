@@ -23,10 +23,10 @@ class ImageHeading extends Component {
     return (
       <div className="d-flex relative ih-wrapper flex-xl-column justify-content-center align-items-center" style={{ background: `url('${content.image}')`, backgroundSize: 'cover'}}>
         <div className="text-center heading-container">
-          <h1 className="animated fadeInDown text-white agent-name">
+          <p className="animated fadeInDown text-white agent-name">
             {content.title}
-          </h1>
-          <p className="animated fadeInUp text-white agent-location">{content.description}</p>
+          </p>
+          <h1 className="animated fadeInUp text-white agent-location">{content.description}</h1>
           <Button user_path={profile.user_path} title={buttonTitle}/>
         </div>
       </div>
