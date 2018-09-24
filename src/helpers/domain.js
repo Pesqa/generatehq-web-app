@@ -9,3 +9,10 @@ export const getDomain = () => {
 
   return domain;
 }
+
+
+export const getRelativePath = () => {
+  const relativePath = window.location.pathname.substr(1);
+
+  return relativePath;
+}
