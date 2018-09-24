@@ -1,0 +1,155 @@
+.ih-wrapper{
+  height: 80vh;
+  .heading-container {
+    z-index: 0;
+  }
+}
+
+.ih-wrapper:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background: rgba(15, 14, 14, 0.49);
+}
+
+.agent-name {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.agent-location {
+  color: #fff;
+  margin: 0px 0 35px;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+
+.fadeIn {
+  animation-duration: .8s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInDown {
+    animation-duration: .8s;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.fadeInUp {
+    animation-duration: .8s;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .agent-location {
+    font-size: 40px;
+  }
+  .agent-name {
+    font-size: 32px;
+  }
+}
+
+
+/* Estimation form */
+
+.header-estimation-text{
+  font-size: 44px;
+}
+
+.subheader-estimation-text{
+  font-size: 22px;
+}
+
+.estimation-form{
+  position: relative;
+  width: 730px;
+  margin: 0 auto;
+
+  > .search-container{
+    min-width: 400px;
+    float: left;
+  }
+
+  > input {
+    float: left;
+    width: 330px !important;
+    border-radius: 0rem;
+    height: 64px;
+    background: #60b003;
+    color: white;
+  }
+}
