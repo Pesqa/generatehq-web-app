@@ -8,6 +8,7 @@ import {
 import HomePage from './pages/HomePage/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage/PrivacyPolicyPage';
 import ProfilePage from './pages/ProfilePage';
+import HomeEvaluationPage from './pages/HomeEvaluationPage';
 import ChatBotPage from './pages/ChatBotPage';
 import BuyersGuidePage from './pages/BuyersGuidePage';
 import SellersGuidePage from './pages/SellersGuidePage';
@@ -32,6 +33,11 @@ class AppRouter extends Component {
               exact
               path={'/:agent_type/:state/:city/:area'}
               component={ProfilePage}
+            />
+            <Route
+              exact
+              path={'/:agent_type/:state/:city/:area/:page_type'}
+              component={HomeEvaluationPage}
             />
             <Route
               exact
