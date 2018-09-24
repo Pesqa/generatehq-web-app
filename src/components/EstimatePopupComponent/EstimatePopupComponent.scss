@@ -1,0 +1,67 @@
+.modal3 {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 1;
+
+}
+.modal3.open {
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+}
+.modal3__content {
+
+  > .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .btn-green{
+    background: #60b003;
+    color: white;
+    font-weight: bold;
+  }
+
+  .sub-header{
+    font-size: 16px;
+    font-weight: bold;
+    color: #a5a5a5;
+    border-bottom: solid 1px #e1e1e1;
+    padding-bottom: 27px;
+    padding-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .header{
+    font-family: 'URW Chancery L, cursive';
+    font-size: 27px;
+  }
+
+  .info{
+    color: #a5a5a5;
+    background: #f3f3f3;
+    padding: 33px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+
+  input {
+    border-radius: 0rem;
+    line-height: 3.3;
+  }
+}
+
+.modal3__header{
+  > .row{
+    padding: 20px 10px;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+}
