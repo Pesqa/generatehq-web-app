@@ -101,7 +101,7 @@ export default class  EstimatePopup extends React.Component {
                       <div className="col-sm-12 col-md-12 text-center">
                         Last Step! By providing your contact info, we'll be able
                         <br/>
-                        to personalize and email your custom Corcoran Home Evaulation
+                        to personalize and email your custom home valuation.
                       </div>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default class  EstimatePopup extends React.Component {
                   </div>
 
                   <div class="info btn-block">
-                    Corcoran is a trusted brand. Your information is secure
+                    We are a trusted brand. Your information is secure.
                   </div>
 
 
